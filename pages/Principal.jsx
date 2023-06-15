@@ -5,12 +5,8 @@ const HomePage = () => {
   return (
     <div>
       <h1>Bienvenido a la página principal</h1>
-      <Link href="/login">
-        Iniciar Sesion
-      </Link>
-      <br />
-      <Link href="/signup">
-        Crear cuenta
+      <Link href="/authForm">
+        Crear Cuenta y Iniciar Sesion
       </Link>
     </div>
   );
