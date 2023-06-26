@@ -18,11 +18,15 @@ const LoginPage = () => {
     setUser(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('User:', user)
+    const response = await fetch('localhost:5000/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, user, password}),
+    });
   };
 
   return (
@@ -31,17 +35,17 @@ const LoginPage = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
         </label>
         <br />
         <label>
             Usuario:
-            <input type="text" value={user} onChange={handleUserChange} />
+            <input type="text"placeholder="Usuario" value={user} onChange={handleUserChange} />
           </label>
           <br />
         <label>
           Contraseña:
-          <input type="password" value={password} onChange={handlePasswordChange} />
+          <input type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label>
         <br />
         <button type="submit">Iniciar sesión</button>
