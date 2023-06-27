@@ -20,7 +20,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('localhost:5000/', {
+    const response = await fetch('localhost:3000', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
