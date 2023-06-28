@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link'
+import LoginWithGoogle from '../components/LoginWithGoogle';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -53,6 +54,7 @@ const LoginPage = () => {
         Volver
       </Link>
       </form>
+      <LoginWithGoogle />
     </div>
   );
 };
