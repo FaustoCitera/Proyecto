@@ -8,7 +8,7 @@ const LoginWithGoogle = () => {
 
   return (
     <GoogleLogin
-      clientId="TU_CLIENT_ID_DE_GOOGLE"
+      clientId="33243575474-movj623knb88k6fc9foneqvv7n9ph1uf.apps.googleusercontent.com"
       buttonText="Iniciar sesión con Google"
       onSuccess={responseGoogle}
       onFailure={responseGoogle}
