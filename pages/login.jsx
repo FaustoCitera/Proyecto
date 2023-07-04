@@ -21,14 +21,15 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('localhost:3000', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, user, password}),
-    });
-  };
+
+     
+      const response = await fetch('https://random-d.uk/api', { 
+        method: "GET",
+        mode: 'cors',
+        redirect: "follow",
+      });
+      };
+
 
   return (
     <div>
