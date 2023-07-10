@@ -22,14 +22,12 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('https://random-d.uk/api', {
+    fetch('https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple', {
       method: 'GET',
-      mode: "no-cors",
-    });
+    }).then( (r) => r.text() )
+    .then((d) => console.log(d))
+    .catch((e) => console.log(e));
 
-    let data = response.json();
-    console.log(data);
-    
   }
 
   return (
