@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import Link from 'next/link'
 import LoginWithGoogle from '../components/LoginWithGoogle';
+import { useRouter } from 'next/router';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState('');
+  const router = useRouter();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -27,6 +29,8 @@ const LoginPage = () => {
     }).then( (r) => r.text() )
     .then((d) => console.log(d))
     .catch((e) => console.log(e));
+
+    router.push('Review');
 
   }
 
