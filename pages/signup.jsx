@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import Link from 'next/link'
 import LoginWithGoogle from '../components/LoginWithGoogle';
+import { useRouter } from 'next/router';
 
 
 const SignUpPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState('');
+  const router = useRouter();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -23,12 +25,15 @@ const SignUpPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://random-d.uk/api', {
+
+    fetch('https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple', {
       method: 'GET',
-      mode: "no-cors",
-    });
-    
-    console.log(response);
+    }).then( (r) => r.text() )
+    .then((d) => console.log(d))
+    .catch((e) => console.log(e));
+
+    router.push('home');
+
   };
     return (
       <div>
