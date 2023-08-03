@@ -30,7 +30,7 @@ const LoginPage = () => {
     .then((d) => console.log(d))
     .catch((e) => console.log(e));
 
-    router.push('Review');
+    router.push('home');
 
   }
 
