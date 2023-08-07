@@ -24,7 +24,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch('https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple', {
+    fetch('localhost:3000', {
       method: 'GET',
     }).then( (r) => r.text() )
     .then((d) => console.log(d))
