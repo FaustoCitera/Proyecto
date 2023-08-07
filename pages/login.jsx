@@ -9,6 +9,7 @@ const LoginPage = () => {
   const [user, setUser] = useState('');
   const router = useRouter();
 
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -23,16 +24,14 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    fetch('https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple', {
+    fetch('localhost:3000', {
       method: 'GET',
-    }).then( (r) => r.text() )
-    .then((d) => console.log(d))
+    }).then ( (r) => r.text())
+    .then ((d) => console.log(d))
     .catch((e) => console.log(e));
 
-    router.push('home');
-
-  }
+    router.push('home')
+  };
 
   return (
     <div>
