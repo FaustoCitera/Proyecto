@@ -1,5 +1,8 @@
 import { GoogleLogin } from 'react-google-login';
 
+
+
+
 const LoginWithGoogle = () => {
   const responseGoogle = (response) => {
     console.log(response);
@@ -15,7 +18,10 @@ const LoginWithGoogle = () => {
       onFailure={responseGoogle}
       cookiePolicy={'single_host_origin'}
     />
-  );
+    
+      );
 };
+
+
 
 export default LoginWithGoogle;

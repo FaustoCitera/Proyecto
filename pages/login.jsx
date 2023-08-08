@@ -26,12 +26,13 @@ const LoginPage = () => {
     e.preventDefault();
     fetch('localhost:3000', {
       method: 'GET',
-    }).then ( (r) => r.text())
-    .then ((d) => console.log(d))
-    .catch((e) => console.log(e));
+    }).then((r) => r.text())
+      .then((d) => console.log(d))
+      .catch((e) => console.log(e));
+      
+      router.push('home')
 
-    router.push('home')
-  };
+      };
 
   return (
     <div>
@@ -43,10 +44,10 @@ const LoginPage = () => {
         </label>
         <br />
         <label>
-            Usuario:
-            <input type="text"placeholder="Usuario" value={user} onChange={handleUserChange} />
-          </label>
-          <br />
+          Usuario:
+          <input type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+        </label>
+        <br />
         <label>
           Contraseña:
           <input type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
@@ -54,8 +55,8 @@ const LoginPage = () => {
         <br />
         <button type="submit">Iniciar sesión</button>
         <Link href="/Principal">
-        Volver
-      </Link>
+          Volver
+        </Link>
       </form>
       <LoginWithGoogle />
     </div>
