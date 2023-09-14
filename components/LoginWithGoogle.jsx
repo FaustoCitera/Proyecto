@@ -1,5 +1,5 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
@@ -12,15 +12,20 @@ const firebaseConfig = {
   measurementId: "G-PBNB27WGFK"
 };
 
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
-const provider = new firebase.auth.GoogleAuthProvider();
+const provider = new GoogleAuthProvider();
+
+const auth = getAuth();
 
 const Login = () => {
   const handleLogin = async () => {
     try {
-      await firebase.auth().signInWithPopup(provider);
+      await signInWithPopup(auth, provider);
     } catch (error) {
+
+//es aca el redireccionar
+
       console.error(error);
     }
   };
