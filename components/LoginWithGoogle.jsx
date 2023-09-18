@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import 'firebase/firestore';
+import { useRouter } from 'next/router';
 
 const firebaseConfig = {
   apiKey: "AIzaSyB_7E8_Ynnjhqf1dcGG5TJ7yx-mqyvPgH0",
@@ -19,12 +20,14 @@ const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
 const Login = () => {
+  const router = useRouter();
   const handleLogin = async () => {
     try {
       await signInWithPopup(auth, provider);
+      router.push('home')
     } catch (error) {
 
-//es aca el redireccionar
+      //es aca el redireccionar
 
       console.error(error);
     }
