@@ -1,30 +1,38 @@
-//import { useRouter } from 'next/router';
-//import { GoogleLogin } from 'react-google-login';
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import 'firebase/firestore';
 
-//const LoginWithGoogle = () => {
-  // const router = useRouter();
-
-  //const responseGoogle = (response) => {
-    //console.log(response);
-    // Aquí puedes manejar la respuesta del inicio de sesión de Google
-    // router.push("/home");
-  //};
-
-  /*return (
-    <GoogleLogin
-      clientId="33243575474-hq1g51ta15hodu9sm1iolo7irrfp9el8.apps.googleusercontent.com"
-
-      buttonText="Iniciar sesión con Google"
-      onSuccess={responseGoogle}
-      onFailure={responseGoogle}
-      cookiePolicy={'single_host_origin'}
-    // autoLoad={false}
-    // onAutoLoadFinished={false}
-    />
-
-  );
+const firebaseConfig = {
+  apiKey: "AIzaSyB_7E8_Ynnjhqf1dcGG5TJ7yx-mqyvPgH0",
+  authDomain: "critic-2f517.firebaseapp.com",
+  projectId: "critic-2f517",
+  storageBucket: "critic-2f517.appspot.com",
+  messagingSenderId: "360470519687",
+  appId: "1:360470519687:web:20bffc7f5f726c2c163d22",
+  measurementId: "G-PBNB27WGFK"
 };
 
+initializeApp(firebaseConfig);
 
+const provider = new GoogleAuthProvider();
 
-export default LoginWithGoogle;
+const auth = getAuth();
+
+const Login = () => {
+  const handleLogin = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+
+//es aca el redireccionar
+
+      console.error(error);
+    }
+  };
+
+  return (
+    <button onClick={handleLogin}>Iniciar sesión con Google</button>
+  );
+}
+
+export default Login;
