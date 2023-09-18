@@ -1,15 +1,16 @@
-import { GoogleLogin } from 'react-google-login';
+//import { useRouter } from 'next/router';
+//import { GoogleLogin } from 'react-google-login';
 
+//const LoginWithGoogle = () => {
+  // const router = useRouter();
 
-
-
-const LoginWithGoogle = () => {
-  const responseGoogle = (response) => {
-    console.log(response);
+  //const responseGoogle = (response) => {
+    //console.log(response);
     // Aquí puedes manejar la respuesta del inicio de sesión de Google
-  };
+    // router.push("/home");
+  //};
 
-  return (
+  /*return (
     <GoogleLogin
       clientId="33243575474-hq1g51ta15hodu9sm1iolo7irrfp9el8.apps.googleusercontent.com"
 
@@ -17,9 +18,11 @@ const LoginWithGoogle = () => {
       onSuccess={responseGoogle}
       onFailure={responseGoogle}
       cookiePolicy={'single_host_origin'}
+    // autoLoad={false}
+    // onAutoLoadFinished={false}
     />
-    
-      );
+
+  );
 };
 
 
