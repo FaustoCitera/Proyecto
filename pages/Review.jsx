@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReviewForm from '../components/ReviewForm';
 import ReviewList from '../components/ReviewList';
+import Link from 'next/link';
 
 const HomePage = () => {
   const [comments, setComments] = useState([]);
@@ -27,6 +28,9 @@ const HomePage = () => {
       <h1>Reseñas de negocios</h1>
       <ReviewForm onAddComment={handleAddComment} />
       <ReviewList comments={comments} />
+      <Link href="/home">
+        Volver
+      </Link>
     </div>
   );
 };

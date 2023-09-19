@@ -64,7 +64,7 @@ const SearchBar = () => {
         inputProps={inputProps}
       />
       {/* Agrega un botón de redirección */}
-      <button onClick={redirectToAnotherPage}>Ir a otra página</button>
+      <button onClick={redirectToAnotherPage}>Buscar</button>
     </div>
   );
 };
