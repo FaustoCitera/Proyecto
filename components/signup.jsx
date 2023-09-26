@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Link from 'next/link'
-import LoginWithGoogle from '../components/LoginWithGoogle';
 import { useRouter } from 'next/router';
 
 
@@ -59,7 +58,6 @@ const SignUpPage = () => {
             Volver
           </Link>
         </form>
-        <LoginWithGoogle />
       </div>
     );
   };

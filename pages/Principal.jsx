@@ -6,7 +6,7 @@ const HomePage = () => {
     <div>
       <h1>Bienvenido a la página principal</h1>
       <Link href="/authForm">
-        Crear Cuenta y Iniciar Sesion
+        Iniciar Sesion o Crear cuenta
       </Link>
     </div>
   );

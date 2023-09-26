@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const ProfileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,8 +18,7 @@ const ProfileMenu = () => {
   //};
 
   const handleLogout = () => {
-    <Link href="/authForm"></Link>
-    console.log('Cerrar Sesión');
+    router.push('authForm')
   };
 
   const handleSwitchToBusinessAccount = () => {
@@ -28,9 +28,7 @@ const ProfileMenu = () => {
   };
 
   const handleSettings = () => {
-    // Aquí puedes implementar la lógica para la página de configuración
-    // Por ejemplo, redirigir a la página de configuración
-    console.log('Configuración');
+    router.push('config')
   };
 
   return (

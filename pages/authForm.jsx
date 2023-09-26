@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginPage from './login';
-import SignUpPage from './signup';
+import LoginPage from '../components/login';
+import SignUpPage from '../components/signup';
 import LoginWithGoogle from '../components/LoginWithGoogle';
 
 const AuthForm = () => {
