@@ -34,29 +34,33 @@ const LoginPage = () => {
       };
 
   return (
-    <div>
-      <h2>Iniciar sesión</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="generalCard">
+      <div className="cardheader">
+        <h2>Iniciar sesión</h2>
+          <form onSubmit={handleSubmit}>
+        <label className="emailtxt"> 
           Email:
           <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
-        </label>
+        </label> 
         <br />
-        <label>
+        <label className="usuariotxt">
           Usuario:
           <input type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
-        <label>
+        <label className="contrasenatxt">
           Contraseña:
           <input type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label>
         <br />
-        <button type="submit">Iniciar sesión</button>
+        <button type="submit">
+          Iniciar sesión
+        </button>
         <Link href="/Principal">
           Volver
         </Link>
       </form>
+      </div>
     </div>
   );
 };
