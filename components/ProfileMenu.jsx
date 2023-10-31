@@ -22,9 +22,7 @@ const ProfileMenu = () => {
   };
 
   const handleSwitchToBusinessAccount = () => {
-    // Aquí puedes implementar la lógica para cambiar a la cuenta de negocio
-    // Por ejemplo, cambiar el tipo de cuenta y redirigir a la página de negocio
-    console.log('Cambiar a Cuenta de Negocio');
+    router.push('BusinessAccount')
   };
 
   const handleSettings = () => {
