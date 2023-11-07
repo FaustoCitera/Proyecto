@@ -11,10 +11,13 @@ const HomePage = () => {
       <Head>
         <title>Buscador de negocios/restaurantes</title>
       </Head>
-      <main className="cardheader">
+      <div className="cardheader"> 
+      <main>
         <h1>Buscador de negocios/restaurantes</h1>
         <SearchBar />
       </main>
+      </div>
+      
       <header>
         <ProfileMenu />
       </header>
