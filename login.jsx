@@ -23,8 +23,15 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch('localhost:3000', {
-      method: 'GET',
+    const username = e.target.querySelector("#username").value;
+    const email = e.target.querySelector("#email").value;
+    const password = e.target.querySelector("#password").value;
+    fetch('http://localhost:3001/login', {
+      method: 'POST',
+      body: {
+      username,
+      password
+      }
     }).then((r) => r.text())
       .then((d) => console.log(d))
       .catch((e) => console.log(e));
@@ -40,17 +47,17 @@ const LoginPage = () => {
           <form onSubmit={handleSubmit}>
         <label className="emailtxt"> 
           Email:
-          <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
+          <input id="email" type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
         </label> 
         <br />
         <label className="usuariotxt">
           Usuario:
-          <input type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+          <input id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
         <label className="contrasenatxt">
           Contraseña:
-          <input type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+          <input id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label>
         <br />
         <button type="submit">

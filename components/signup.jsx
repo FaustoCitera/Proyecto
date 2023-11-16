@@ -24,13 +24,19 @@ const SignUpPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    fetch('https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple', {
-      method: 'GET',
-    }).then( (r) => r.text() )
-    .then((d) => console.log(d))
-    .catch((e) => console.log(e));
-
+    const username = e.target.querySelector("#username").value;
+    const email = e.target.querySelector("#email").value;
+    const password = e.target.querySelector("#password").value;
+    fetch('http://localhost:3001/signup', {
+      method: 'POST',
+      body: {
+      username,
+      email,
+      password
+      }
+    }).then((r) => r.text())
+      .then((d) => console.log(d))
+      .catch((e) => console.log(e));
     router.push('home');
 
   };
@@ -40,17 +46,17 @@ const SignUpPage = () => {
         <form onSubmit={handleSubmit}>
           <label>
             Email:
-            <input type="email"placeholder="Email" value={email} onChange={handleEmailChange} />
+            <input type="email" id="email"placeholder="Email" value={email} onChange={handleEmailChange} />
           </label>
           <br />
           <label>
             Usuario:
-            <input type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+            <input type="text" id="username" placeholder="Usuario" value={user} onChange={handleUserChange} />
           </label>
           <br />
           <label>
             Contraseña:
-            <input type="password"placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+            <input type="password" id="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
           <button type="submit">Crear cuenta</button>
@@ -62,5 +68,7 @@ const SignUpPage = () => {
     );
   };
 
-
+export const emailsignup = email;
+export const usersignup = user;
+export const passwordsignup = password;
 export default SignUpPage;
