@@ -68,7 +68,4 @@ const SignUpPage = () => {
     );
   };
 
-export const emailsignup = email;
-export const usersignup = user;
-export const passwordsignup = password;
 export default SignUpPage;

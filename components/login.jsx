@@ -26,19 +26,26 @@ const LoginPage = () => {
     const username = e.target.querySelector("#username").value;
     const email = e.target.querySelector("#email").value;
     const password = e.target.querySelector("#password").value;
-    fetch('http://localhost:3001/login', {
+    
+    console.log({username});
+    console.log({email});
+    console.log({password});
+    
+    fetch('http://localhost:3001/signup', {
       method: 'POST',
       body: {
       username,
       password
       }
     }).then((r) => r.text())
-      .then((d) => console.log(d))
-      .catch((e) => console.log(e));
-      
-      router.push('home')
-
-      };
+      .then((d) => {
+        console.log(d)
+        //router.push('home')
+      })
+      .catch((e) => {
+        console.log(e)
+      });
+  }
 
   return (
     <div className="generalCard">
@@ -70,6 +77,6 @@ const LoginPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default LoginPage;
