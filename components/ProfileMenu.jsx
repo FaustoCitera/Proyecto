@@ -22,7 +22,7 @@ const ProfileMenu = () => {
   };
 
   const handleSwitchToBusinessAccount = () => {
-    router.push('BusinessAccount')
+    router.push('usuarioNegociador')
   };
 
   const handleSettings = () => {

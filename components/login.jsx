@@ -8,11 +8,6 @@ const LoginPage = () => {
   const [user, setUser] = useState('');
   const router = useRouter();
 
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -31,7 +26,7 @@ const LoginPage = () => {
     console.log({email});
     console.log({password});
     
-    fetch('http://localhost:3001/signup', {
+    fetch('http://localhost:3001/login', {
       method: 'POST',
       body: {
       username,
@@ -40,7 +35,7 @@ const LoginPage = () => {
     }).then((r) => r.text())
       .then((d) => {
         console.log(d)
-        //router.push('home')
+        //router.push('home') 
       })
       .catch((e) => {
         console.log(e)
@@ -52,11 +47,6 @@ const LoginPage = () => {
       <div className="cardheader">
         <h2>Iniciar sesión</h2>
           <form onSubmit={handleSubmit}>
-        <label className="emailtxt"> 
-          Email:
-          <input id="email" type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
-        </label> 
-        <br />
         <label className="usuariotxt">
           Usuario:
           <input id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
