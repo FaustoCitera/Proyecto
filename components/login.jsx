@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState('');
   const router = useRouter();
@@ -19,11 +18,9 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const username = e.target.querySelector("#username").value;
-    const email = e.target.querySelector("#email").value;
     const password = e.target.querySelector("#password").value;
     
     console.log({username});
-    console.log({email});
     console.log({password});
     
     fetch('http://localhost:3001/login', {

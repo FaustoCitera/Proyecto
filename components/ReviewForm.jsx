@@ -12,21 +12,41 @@ const ReviewForm = ({ onAddComment }) => {
     setComment(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (name.trim() !== '' && comment.trim() !== '') {
       const newComment = {
         name,
-        comment
+        comment,
+        likes: 0,
+        dislikes: 0,
+        replies: [],
       };
 
-      // Llama a la función onAddComment para pasar el nuevo comentario al componente principal
-      onAddComment(newComment);
+      try {
+        const response = await fetch('http://localhost:3001/api/comments', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newComment),
+        });
 
-      // Restablece los campos del formulario
-      setName('');
-      setComment('');
+        if (response.ok) {
+          console.log('Reseña agregada con éxito');
+          // Llama a la función onAddComment para pasar el nuevo comentario al componente principal
+          onAddComment(newComment);
+
+          // Restablece los campos del formulario
+          setName('');
+          setComment('');
+        } else {
+          console.error('Error al agregar la reseña');
+        }
+      } catch (error) {
+        console.error('Error de red:', error);
+      }
     }
   };
 
