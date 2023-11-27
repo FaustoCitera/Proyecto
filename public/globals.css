@@ -2,29 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  line-height: normal;
+.page 
+{
+ position: absolute;
+ left: 50%;
+ top: 50%;
 }
-
-:root {
-  /* fonts */
-  --font-roboto: Roboto;
-
-  /* font sizes */
-  --font-size-36xl: 55px;
-  --font-size-41xl: 60px;
-  --font-size-31xl: 50px;
-
-  /* Colors */
-  --color-white: #fff;
-  --color-royalblue: #667eea;
-  --color-gray-100: rgba(0, 0, 0, 0.5);
-  --color-lightgray: #d2d2d2;
-
-  /* Border radiuses */
-  --br-6xl: 25px;
-  --br-3xs: 10px;
-}
-
-

@@ -40,18 +40,19 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="generalCard">
-      <div className="cardheader">
+  <div classname="pe">
+    <div className="page">
+      <div className="pge">
         <h2>Iniciar sesión</h2>
           <form onSubmit={handleSubmit}>
-        <label className="usuariotxt">
-          Usuario:
-          <input id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+            <label className="usuariotxt">
+            Usuario:
+            <input id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
         <label className="contrasenatxt">
-          Contraseña:
-          <input id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+           Contraseña:
+            <input id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label>
         <br />
         <button type="submit">
@@ -63,6 +64,7 @@ const LoginPage = () => {
       </form>
       </div>
     </div>
+  </div>
   );
 }
 
