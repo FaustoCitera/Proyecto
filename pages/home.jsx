@@ -12,7 +12,7 @@ const HomePage = () => {
         <title>Buscador de negocios/restaurantes</title>
       </Head>
       <div className="cardheader"> 
-      <main>
+      <main className="searchbar">
         <h1>Buscador de negocios/restaurantes</h1>
         <SearchBar />
       </main>

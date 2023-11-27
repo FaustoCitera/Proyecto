@@ -56,10 +56,10 @@ const SignUpPage = () => {
           <br />
           <label>
             Contraseña:
-            <input type="password" id="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+            <input class="contrasea"type="password" id="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
-          <button type="submit">Crear cuenta</button>
+          <button class="crear-mi-cuenta" type="submit">Crear cuenta</button>
           <Link href="/Principal">
             Volver
           </Link>
