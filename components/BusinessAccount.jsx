@@ -55,11 +55,6 @@ const BussinesAccount = () => {
           <input type="text" name="productOrService" onChange={handleChange} />
         </label>
         <br />
-        <label>
-          Nombre del Dueño:
-          <input type="text" name="owner" onChange={handleChange} />
-        </label>
-        <br />
         <button type="button" onClick={handleSubmit}>
           Agregar Negocio
         </button>
