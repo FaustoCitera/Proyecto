@@ -23,8 +23,8 @@ const LoginPage = () => {
     
     console.log({username});
     console.log({password});
-    
     useEffect(() => { 
+
     fetch('http://localhost:3001/login', {
       method: 'POST',
       body: {
@@ -40,8 +40,7 @@ const LoginPage = () => {
         console.log(e)
       });
   }
-  )}
-
+)}
   return (
   <div classname="pe">
     <div className="page">
@@ -56,9 +55,11 @@ const LoginPage = () => {
         <label className="labelcolor">
            Contraseña:
             <input className="inputcolor" id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
-        </label>
+        </label >
         <br />
-        <LoginWithGoogle />
+        <label className="labelcolor">
+         <LoginWithGoogle />
+        </label>
         <br/>
         <button type="submit">
           Iniciar sesión
