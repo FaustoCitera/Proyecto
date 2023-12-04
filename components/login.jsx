@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import LoginWithGoogle from '../components/LoginWithGoogle';
 
 const LoginPage = () => {
   const [password, setPassword] = useState('');
@@ -57,6 +58,8 @@ const LoginPage = () => {
             <input id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label>
         <br />
+        <LoginWithGoogle />
+        <br/>
         <button type="submit">
           Iniciar sesión
         </button>
