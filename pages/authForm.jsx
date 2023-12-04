@@ -17,7 +17,6 @@ const AuthForm = () => {
       <button onClick={toggleForm}>
         {isLogin ? 'Crear cuenta' : 'Iniciar sesión'}
       </button>
-      <LoginWithGoogle />
     </div>
   );
 };

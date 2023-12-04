@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import LoginWithGoogle from '../components/LoginWithGoogle';
 
 
 const SignUpPage = () => {
@@ -58,6 +59,8 @@ const SignUpPage = () => {
             Contraseña:
             <input class="contrasea"type="password" id="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
           </label>
+          <br />
+          <LoginWithGoogle />
           <br />
           <button class="crear-mi-cuenta" type="submit">Crear cuenta</button>
           <Link href="/Principal">
