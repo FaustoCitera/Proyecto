@@ -46,14 +46,14 @@ const LoginPage = () => {
       <div className="pge">
         <h2>Iniciar sesión</h2>
           <form onSubmit={handleSubmit}>
-            <label className="usuariotxt">
-            Usuario:
-            <input id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+             <label className="labelcolor">
+              Usuario:
+             <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
-        <label className="contrasenatxt">
+        <label className="labelcolor">
            Contraseña:
-            <input id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+            <input className="inputcolor" id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label>
         <br />
         <LoginWithGoogle />
