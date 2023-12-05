@@ -23,8 +23,8 @@ const LoginPage = () => {
     
     console.log({username});
     console.log({password});
-    useEffect(() => { 
 
+    
     fetch('http://localhost:3001/login', {
       method: 'POST',
       body: {
@@ -39,8 +39,8 @@ const LoginPage = () => {
       .catch((e) => {
         console.log(e)
       });
-  }
-)}
+  
+}
   return (
   <div classname="pe">
     <div className="page">
