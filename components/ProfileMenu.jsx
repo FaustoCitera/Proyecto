@@ -1,5 +1,3 @@
-// components/ProfileMenu.js
-
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -13,30 +11,41 @@ const ProfileMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  //const closeMenu = () => {
-    //setIsOpen(false);
-  //};
-
   const handleLogout = () => {
-    router.push('authForm')
+    router.push('authForm');
   };
 
   const handleSwitchToBusinessAccount = () => {
-    router.push('usuarioNegociador')
+    router.push('usuarioNegociador');
+  };
+
+  const handleSwitchToReseña = () => {
+    router.push('home');
   };
 
   const handleSettings = () => {
-    router.push('config')
+    router.push('config');
   };
+
+  // Verifica la ruta actual
+  const isHome = router.pathname === '/home';
+  const isUsuarioNegociador = router.pathname === '/usuarioNegociador';
 
   return (
     <div className="profile-menu">
       <FontAwesomeIcon icon={faUser} onClick={toggleMenu} />
       {isOpen && (
         <div className="menu-options">
-            <button onClick={handleLogout}>Cerrar Sesión</button>
-            <button onClick={handleSwitchToBusinessAccount}>Cambiar a Cuenta de Negocio</button>
-            <button onClick={handleSettings}>Configuración</button>
+          <button onClick={handleLogout}>Cerrar Sesión</button>
+          {isUsuarioNegociador && (
+            <button onClick={handleSwitchToReseña}>Cambiar a Cuenta de Reseñador</button>
+          )}
+          {isHome && (
+            <button onClick={handleSwitchToBusinessAccount}>
+              Cambiar a Cuenta de Negocio
+            </button>
+          )}
+          <button onClick={handleSettings}>Configuración</button>
         </div>
       )}
     </div>
