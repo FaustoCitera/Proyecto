@@ -43,7 +43,9 @@ const SignUpPage = () => {
   };
     return (
       <div>
+        <div>
         <h2>Crear cuenta</h2>
+        </div>
         <form onSubmit={handleSubmit}>
           <label>
             Email:

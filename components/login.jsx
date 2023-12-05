@@ -42,19 +42,19 @@ const LoginPage = () => {
   }
 )}
   return (
-  <div classname="pe">
+  <div className="pe">
     <div className="page">
       <div className="pge">
-        <h2>Iniciar sesión</h2>
+        <div className="Inicioc">
+        <h2 className="h22">Iniciar sesión</h2>
+        </div>
           <form onSubmit={handleSubmit}>
              <label className="labelcolor">
-              Usuario:
-             <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+              <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
         <label className="labelcolor">
-           Contraseña:
-            <input className="inputcolor" id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+           <input className="inputcolor" id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label >
         <br />
         <label className="labelcolor">
@@ -74,4 +74,4 @@ const LoginPage = () => {
   );
 }
 
-export default LoginPage;
+    export default LoginPage;
