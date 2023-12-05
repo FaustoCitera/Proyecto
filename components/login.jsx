@@ -61,12 +61,14 @@ const LoginPage = () => {
          <LoginWithGoogle />
         </label>
         <br/>
-        <button type="submit">
+        <div className="columna">
+        <button className="iniciobutton" type="submit">
           Iniciar sesión
-        </button>
-        <Link href="/Principal">
+        </button >
+        <Link className= "volverbutton" href="/Principal">
           Volver
         </Link>
+        </div>
       </form>
       </div>
     </div>
