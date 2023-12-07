@@ -12,11 +12,13 @@ const AuthForm = () => {
   };
 
   return (
-    <div className="card">
+    <div className="toggle">
       {isLogin ? <LoginPage /> : <SignUpPage />}
+      <div className="toggle2">
       <button onClick={toggleForm}>
-        {isLogin ? 'Crear cuenta' : 'Iniciar sesión'}
+        {isLogin ? 'no tienes una cuenta? Registrate' : 'Iniciar sesión'}
       </button>
+      </div>
     </div>
   );
 };

@@ -63,7 +63,7 @@ const LoginPage = () => {
           Iniciar sesión
         </button >
         <Link className= "volverbutton" href="/Principal">
-          Volver
+          Volver a la home
         </Link>
         </div>
       </form>
