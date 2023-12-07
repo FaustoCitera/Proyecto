@@ -11,8 +11,18 @@
  justify-content: center;
  align-items: center;
 flex-direction: column;
-margin: 12px;
+
 }
+
+.pge
+{
+align-items: center;
+
+ 
+}
+
+
+
 
 .card
 {
@@ -32,12 +42,25 @@ margin: 12px;
       
 }
 .Inicioc
-{     
-      padding: 15%;
+{    
+
+      padding: 10%;
       display: flex;
       justify-content: center;
       align-content: center;
+      padding-top: 30%;
+      
+      
 
+}
+
+.Iniciosign
+{
+      padding: 3%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      padding-top: 7.5%;
 }
 .labelcolor
 {
@@ -51,6 +74,7 @@ margin: 12px;
       box-sizing: border-box;
       background-color: #ddd; /* Color de fondo gris */
       color: black;
+
 }
 .googlecolor
 {
@@ -99,6 +123,13 @@ margin: 12px;
       text-align: center;
 
 }
+.labelcuenta
+{
+      display: flex;
+      
+}
+
+
 .columna
 {
       display: flex;
@@ -109,5 +140,14 @@ justify-content: space-between;
 {
       display: flex;
       justify-content: center;
+      padding: 2%;
             
+}
+.toggle3
+{
+      color: blue;
+}
+.toggle
+{
+
 }

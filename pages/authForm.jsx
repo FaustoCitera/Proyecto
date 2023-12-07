@@ -15,8 +15,11 @@ const AuthForm = () => {
     <div className="toggle">
       {isLogin ? <LoginPage /> : <SignUpPage />}
       <div className="toggle2">
-      <button onClick={toggleForm}>
-        {isLogin ? 'no tienes una cuenta? Registrate' : 'Iniciar sesión'}
+<label className="labelcuenta">
+no tienes una cuenta?
+</label>
+      <button className="toggle3"onClick={toggleForm}>
+        {isLogin ? ' Registrate' : 'Iniciar sesión'}
       </button>
       </div>
     </div>

@@ -42,34 +42,36 @@ const SignUpPage = () => {
 
   };
     return (
-      <div>
-        <div>
-        <h2>Crear cuenta</h2>
+      <div className="page">
+        <div className="Iniciosign">
+        <h2 className="h22">Crear cuenta</h2>
         </div>
         <form onSubmit={handleSubmit}>
-          <label>
-            Email:
-            <input type="email" id="email"placeholder="Email" value={email} onChange={handleEmailChange} />
+          <label className="labelcolor">
+            <input className="inputcolor" type="email" id="email"placeholder="Email" value={email} onChange={handleEmailChange} />
           </label>
           <br />
-          <label>
-            Usuario:
-            <input type="text" id="username" placeholder="Usuario" value={user} onChange={handleUserChange} />
+          <label className="labelcolor">
+            <input className="inputcolor" type="text" id="username" placeholder="Usuario" value={user} onChange={handleUserChange} />
           </label>
           <br />
-          <label>
-            Contraseña:
-            <input class="contrasea"type="password" id="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+          <label className="labelcolor">
+            <input className="inputcolor" type="password" id="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
+          <label className="googlecolor">
           <LoginWithGoogle />
+          </label>
           <br />
-          <button class="crear-mi-cuenta" type="submit">Crear cuenta</button>
-          <Link href="/Principal">
-            Volver
+          <div className="columna">
+          <button className="iniciobutton" type="submit">Crear cuenta</button>
+          <Link className= "volverbutton" href="/Principal">
+            Volver a la home
           </Link>
+          </div>
         </form>
       </div>
+      
     );
   };
 
