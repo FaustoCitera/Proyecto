@@ -20,11 +20,6 @@ const LoginPage = () => {
     e.preventDefault();
     const username = e.target.querySelector("#username").value;
     const password = e.target.querySelector("#password").value;
-    
-    console.log({username});
-    console.log({password});
-
-    
     fetch('http://localhost:3001/login', {
       method: 'POST',
       body: {

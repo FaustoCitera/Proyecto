@@ -1,5 +1,3 @@
-// components/SearchBar.js
-
 import React, { useState } from 'react';
 import Autosuggest from 'react-autosuggest';
 import { useRouter } from 'next/router';
@@ -15,6 +13,15 @@ const SearchBar = () => {
     { id: 3, name: 'Betos Lomitos' },
     // Agrega más negocios aquí
   ];
+
+  /*const [businesses, setBusinesses] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/negocios.') 
+      .then(response => response.json())
+      .then(data => setBusinesses(data))
+      .catch(error => console.error('Error fetching businesses:', error));
+  }, []);*/
 
   const getSuggestions = (inputValue) => {
     const filteredBusinesses = businesses.filter((business) =>
