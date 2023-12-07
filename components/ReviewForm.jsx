@@ -25,7 +25,7 @@ const ReviewForm = ({ onAddComment }) => {
       };
 
       try {
-        const response = await fetch('http://localhost:3001/api/comments', {
+        const response = fetch('http://localhost:3001/comments', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

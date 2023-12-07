@@ -17,7 +17,7 @@ const BussinesAccount = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/business', {
+      const response = fetch('http://localhost:3001/business', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +27,6 @@ const BussinesAccount = () => {
 
       if (response.ok) {
         console.log('Negocio agregado con éxito');
-        // Puedes redirigir o realizar otras acciones después de agregar el negocio
       } else {
         console.error('Error al agregar el negocio');
       }
