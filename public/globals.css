@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'typeface-roboto';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 
 .page 
 {
@@ -51,7 +52,20 @@ margin: 12px;
       font-size: 16px;
       box-sizing: border-box;
       background-color: #ddd; /* Color de fondo gris */
-      color: #D2D2D2;
+      color: black;
+}
+.googlecolor
+{
+      display: flex;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 10px;
+        border: 3px solid #ccc;
+        border-radius: 5px;
+        width: 300px;
+        font-size: 16px;
+        box-sizing: border-box;
+        background-color: white; /* Color de fondo gris */
+        color: black;  
 }
 
 .inputcolor

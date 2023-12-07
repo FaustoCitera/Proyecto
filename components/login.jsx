@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import LoginWithGoogle from '../components/LoginWithGoogle';
 
+
+
 const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [user, setUser] = useState('');
@@ -57,7 +59,7 @@ const LoginPage = () => {
            <input className="inputcolor" id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label >
         <br />
-        <label className="labelcolor">
+        <label className="googlecolor">
          <LoginWithGoogle />
         </label>
         <br/>
