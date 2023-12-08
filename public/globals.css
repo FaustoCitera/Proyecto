@@ -11,23 +11,70 @@
  justify-content: center;
  align-items: center;
 flex-direction: column;
+}
+.ppage
+{
+font-family: 'Roboto', sans-serif;
+ justify-content: center;
+ align-items: center;
+flex-direction: column;
+}
+.iniciopage
+{
+      font-family: 'Roboto', sans-serif;
+      max-width: fit-content;
+}
+.fondoazul
+{
+      padding: 2%;
+      height: 30%;
+      background-color: #667EEA;
+}
+
+.titulop
+{
+      display: flex;
+      justify-content: center;
+      color: #FFFFFF;
+      font-weight: bold;
+}
+.textop
+{
+      display: flex;
+      justify-content: center;
+      padding: 20%;
 
 }
+.textorelleno
+{
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      border: 2px solid white ;
+      padding: 10px;
+      border-radius: 13px;
+      width:fit-content;
+      background-color: #667EEA;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .pge
 {
 align-items: center;
-
- 
 }
 
-
-
-
-.card
-{
-
-}
 
 .h22
 {
@@ -36,7 +83,7 @@ align-items: center;
       color: white;
       border: 2px solid black ;
       padding: 10px;
-      border-radius: 12%;
+      border-radius: 13px;
       width:fit-content;
       background-color: #667EEA;
       
@@ -103,9 +150,9 @@ align-items: center;
 {
       font-family: 'Roboto', sans-serif;
       color: white;
-      border: 2px solid black ;
+      border: 2px solid white ;
       padding: 10px;
-      border-radius: 12%;
+      border-radius: 13px;
       background-color: #ccc;
       color: black; 
       width: 145px;
@@ -115,9 +162,9 @@ align-items: center;
 {
       font-family: 'Roboto', sans-serif;
       color: white;
-      border: 2px solid black ;
+      border: 2px solid white ;
       padding: 10px;
-      border-radius: 12%;
+      border-radius: 13px;
       background-color: #667EEA;
       width: 145px;
       text-align: center;

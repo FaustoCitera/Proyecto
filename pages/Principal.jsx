@@ -3,16 +3,20 @@ import Link from 'next/link';
 
 const HomePage = () => {
   return (
-    <div className='page'>
+    <div className='ppage'>
       <div>
-      <div>
+      <div className='fondoazul'>
+        <div className='titulop'>
       <h1>Bienvenido a la página principal</h1>
       </div>
-      <Link href="/authForm">
+      </div>
+      <div className='textop'>
+      <Link className='textorelleno' href="/authForm">
         Iniciar Sesion o Crear cuenta
       </Link>
+      </div>
+      </div>
     </div>
-    </div> 
   );
 };
 
