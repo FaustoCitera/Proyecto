@@ -34,23 +34,29 @@ const ProfileMenu = () => {
   return (
     <div className="profile-menu">
       <div className='fondoazul'>
-        <div className='titulohome'>
+        <div className='titulohomelog'>
       <FontAwesomeIcon icon={faUser} onClick={toggleMenu} />
       </div>
       </div>
       <div className='titulohome'>
       {isOpen && (
         <div className="menu-options">
+          <div className='botonfondo'>
           <button className="butoncuenta" onClick={handleLogout}>Cerrar Sesión</button>
           {isUsuarioNegociador && (
             <button onClick={handleSwitchToReseña}>Cambiar a Cuenta de Reseñador</button>
           )}
+          </div>
+          <div className='botonfondo'>
           {isHome && (
             <button className="butoncuenta" onClick={handleSwitchToBusinessAccount}>
               Cambiar a Cuenta de Negocio
             </button>
           )}
+          </div>
+          <div className='botonfondo'>
           <button className="butoncuenta" onClick={handleSettings}>Configuración</button>
+        </div>
         </div>
       )}
       </div>

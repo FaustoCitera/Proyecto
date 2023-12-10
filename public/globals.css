@@ -49,6 +49,15 @@ flex-direction: column;
       font-size: x-large;
       padding: 1%;
 }
+.titulohomelog
+{
+      display: flex;
+      justify-content: flex-end;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: x-large;
+
+}
 .textop
 {
       display: flex;
@@ -214,20 +223,28 @@ justify-content: space-between;
 {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      color: black;
       font-size: medium;
 
 }
 
 .butoncuenta
 {
-      display: flex;
-      border: 1px solid #667EEA;
+      color: #FFFFFF;
       border-radius: 5px;
-      width: 300px;
+      width: -webkit-fill-available;
       font-size: 16px;
-      box-sizing: border-box;
       background-color: #667EEA;
       padding: 2%;
+      text-align: center;
+      align-items: center;
 }
+.botonfondo
+{
+      display: flex;
+ padding: 1%;
+ align-items: center;
+ text-align: center;
+ justify-content: flex-end;
+}
+
+
