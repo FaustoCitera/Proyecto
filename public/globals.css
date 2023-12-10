@@ -39,6 +39,16 @@ flex-direction: column;
       font-weight: bold;
       font-size: x-large;
 }
+
+.titulohome
+{
+      display: flex;
+      justify-content: flex-end;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: x-large;
+      padding: 1%;
+}
 .textop
 {
       display: flex;
@@ -57,19 +67,6 @@ flex-direction: column;
       width:fit-content;
       background-color: #667EEA;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .pge
 {
@@ -194,4 +191,43 @@ justify-content: space-between;
 .toggle3
 {
       color: blue;
+}
+
+.serchbar
+{
+      display: flex;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 300px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background-color: #ddd; /* Color de fondo gris */
+      color: black;
+}
+
+.profile-menu
+{
+
+}
+
+.menu-options
+{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: black;
+      font-size: medium;
+
+}
+
+.butoncuenta
+{
+      display: flex;
+      border: 1px solid #667EEA;
+      border-radius: 5px;
+      width: 300px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background-color: #667EEA;
+      padding: 2%;
 }

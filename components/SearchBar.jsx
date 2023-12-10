@@ -47,7 +47,7 @@ const SearchBar = () => {
   );
 
   const inputProps = {
-    placeholder: 'Buscar negocios',
+    placeholder: 'Encontra tu negocio',
     value,
     onChange: (_, { newValue }) => {
       setValue(newValue);

@@ -33,21 +33,27 @@ const ProfileMenu = () => {
 
   return (
     <div className="profile-menu">
+      <div className='fondoazul'>
+        <div className='titulohome'>
       <FontAwesomeIcon icon={faUser} onClick={toggleMenu} />
+      </div>
+      </div>
+      <div className='titulohome'>
       {isOpen && (
         <div className="menu-options">
-          <button onClick={handleLogout}>Cerrar Sesión</button>
+          <button className="butoncuenta" onClick={handleLogout}>Cerrar Sesión</button>
           {isUsuarioNegociador && (
             <button onClick={handleSwitchToReseña}>Cambiar a Cuenta de Reseñador</button>
           )}
           {isHome && (
-            <button onClick={handleSwitchToBusinessAccount}>
+            <button className="butoncuenta" onClick={handleSwitchToBusinessAccount}>
               Cambiar a Cuenta de Negocio
             </button>
           )}
-          <button onClick={handleSettings}>Configuración</button>
+          <button className="butoncuenta" onClick={handleSettings}>Configuración</button>
         </div>
       )}
+      </div>
     </div>
   );
 };

@@ -7,20 +7,25 @@ import ProfileMenu from '../components/ProfileMenu';
 
 const HomePage = () => {
   return (
-    <div className="card">
-      <Head>
-        <title>Buscador de negocios/restaurantes</title>
-      </Head>
-      <div className="cardheader"> 
-      <main className="searchbar">
-        <h1>Buscador de negocios/restaurantes</h1>
-        <SearchBar />
-      </main>
-      </div>
-      
+    <div className="ppage">
+      <div className=''>
+      <div className=''>
+
       <header>
         <ProfileMenu />
       </header>
+
+      </div>
+      </div>
+      <Head>
+        <title>Buscador</title>
+      </Head>
+      <main className="s">
+        <SearchBar />
+      </main>
+      
+      
+
     </div>
   );
 };
