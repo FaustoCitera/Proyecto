@@ -26,7 +26,7 @@ flex-direction: column;
 }
 .fondoazul
 {
-      padding: 2%;
+      padding: 1%;
       height: 30%;
       background-color: #667EEA;
 }
@@ -37,6 +37,7 @@ flex-direction: column;
       justify-content: center;
       color: #FFFFFF;
       font-weight: bold;
+      font-size: x-large;
 }
 .textop
 {
