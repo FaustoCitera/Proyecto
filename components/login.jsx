@@ -30,11 +30,7 @@ const LoginPage = () => {
       password,
       }),
     });
-    if (response.ok) {
-      router.push('/home');
-    } else {
-      console.error('Error en la solicitud:', response.statusText);
-    }
+    router.push('/home');
   } 
   return (
   <div className="pe">
