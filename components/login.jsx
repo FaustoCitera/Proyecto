@@ -42,12 +42,12 @@ const LoginPage = () => {
         </div>
           <form onSubmit={handleSubmit}>
              <label className="labelcolor">
-             <img src="/assets/img/usuario1.png" width="25" height="25" /> <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+             <img src="/assets/img/usuario1.png" width="25" height="25" /> <input className="inputcolor" id="username" type="text" placeholder="‎ Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
         <label className="labelcolor">
         <img src="/assets/img/clave1.png" width="25" height="25" />
-           <input className="inputcolor" id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
+           <input className="inputcolor" id="password" type="password" placeholder="‎ Contraseña" value={password} onChange={handlePasswordChange} />
         </label >
         <br />
         <label className="googlecolor">
@@ -59,7 +59,7 @@ const LoginPage = () => {
         <button className="iniciobutton" type="submit">
           Iniciar sesión
         </button >
-        <Link className= "volverbutton" href="/Principal">
+        <Link className= "volverbutton" href="./Principal">
           Volver a la home
         </Link>
         </div>
