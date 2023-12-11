@@ -316,6 +316,7 @@ justify-content: space-between;
       width: fit-content;
       border: 3px solid #ccc;
       height: 38px;
+      border-radius: 5px 0px 0px 5px;
       
       
 }
@@ -343,16 +344,15 @@ justify-content: space-between;
 
 .buttonserch
 {
-      padding: 4px;
+      padding: 5px;
       display: flex;
       font-size: 16px;
       color: white;
       background-color: #667EEA;
       max-width: fit-content;
       align-items: center;
-      border: 3px solid #ccc;
-      border-radius: 10%;
-}
+      border: 2px solid #ccc;
+      border-radius: 0px 5px 5px 0px;}
 .randm
 {
       display: flex;
