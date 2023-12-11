@@ -43,23 +43,28 @@ const SignUpPage = () => {
   };
     return (
       <div className="page">
+        <img src="/assets/img/logo.png" />
         <div className="Iniciosign">
         <h2 className="h22">Crear cuenta</h2>
         </div>
         <form onSubmit={handleSubmit}>
           <label className="labelcolor">
+          <img src="/assets/img/email1.png" width="25" height="25" />
             <input className="inputcolor" type="email" id="email"placeholder="Email" value={email} onChange={handleEmailChange} />
           </label>
           <br />
           <label className="labelcolor">
+          <img src="/assets/img/usuario1.png" width="25" height="25" />
             <input className="inputcolor" type="text" id="username" placeholder="Usuario" value={user} onChange={handleUserChange} />
           </label>
           <br />
           <label className="labelcolor">
+          <img src="/assets/img/clave1.png" width="25" height="25" />
             <input className="inputcolor" type="password" id="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
           <label className="googlecolor">
+          <img src="/assets/img/google.png" width="25" height="25" />
           <LoginWithGoogle />
           </label>
           <br />

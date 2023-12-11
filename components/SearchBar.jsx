@@ -60,7 +60,8 @@ const SearchBar = () => {
   };
 
   return (
-<div className="randm">    
+<div className="randm">   
+<img src="/assets/img/criTIC.png" width="250" height="250" /> 
 <div className='general'>
     <div className='searchdiv'>
       <Autosuggest 
