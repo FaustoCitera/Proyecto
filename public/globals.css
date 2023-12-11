@@ -64,7 +64,7 @@ flex-direction: column;
 {
       display: flex;
       justify-content: center;
-      padding: 20%;
+      padding: 10%;
 
 }
 .textorelleno
@@ -81,7 +81,9 @@ flex-direction: column;
 
 .pge
 {
-align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 }
 
 
@@ -104,7 +106,7 @@ align-items: center;
       display: flex;
       justify-content: center;
       align-content: center;
-      padding-top: 35%;
+      padding-top: 7%;
       
       
 
@@ -112,7 +114,7 @@ align-items: center;
 
 .Iniciosign
 {
-      padding: 3%;
+      padding: 8%;
       display: flex;
       justify-content: center;
       align-content: center;
@@ -292,6 +294,12 @@ justify-content: space-between;
 
 
 }
+.prueba
+{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
 
 .general .searchdiv input
 {
@@ -303,7 +311,11 @@ justify-content: space-between;
 }
 
 .general .searchdiv .react-autosuggest__suggestions-container{
-      background-color: red;
+      display: flex;
+      display: grid;
+      background-color: grey;
+      border: black 5px;
+
 }
 
 .general{
@@ -329,8 +341,21 @@ justify-content: space-between;
 .randm
 {
       display: flex;
+      flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 5%;
     width: -webkit-fill-available;
+}
+.imginicio
+{
+      width:400px;
+      height: 280px;
+      padding-top:5%;
+}
+.imglogin
+{
+      padding-top: 10%;
+      width:25%; 
+      height:25%;
 }

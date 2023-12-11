@@ -40,7 +40,7 @@ const LoginPage = () => {
   <div className="pe">
     <div className="page">
       <div className="pge">
-      <img src="/assets/img/logo.png"  />
+      <img className="imglogin"src="/assets/img/logo.png"  />
         <div className="Inicioc">
         <h2 className="h22">Iniciar sesión</h2>
         </div>
