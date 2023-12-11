@@ -24,21 +24,31 @@ const SignUpPage = () => {
 
 
   const handleSubmit = async (e) => {
+
+    alert("corriendo")
     e.preventDefault();
     const username = e.target.querySelector("#username").value;
     const email = e.target.querySelector("#email").value;
     const password = e.target.querySelector("#password").value;
-    fetch('http://localhost:3001/signup', {
-      method: 'POST',
-      body: {
+
+    const body = JSON.stringify({
       username,
       email,
       password
-      }
+    });
+
+    console.log(body);
+
+    fetch('http://localhost:3001/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: body,
     }).then((r) => r.text())
       .then((d) => console.log(d))
       .catch((e) => console.log(e));
-    router.push('home');
+    //router.push('home');
 
   };
     return (
@@ -67,11 +77,11 @@ const SignUpPage = () => {
           <label className="googlecolor">
           <img src="/assets/img/google.png" width="25" height="25" />
           <LoginWithGoogle />
-          </label>
-          <br />
-          <div className="columna">
+        </label>
+        <br />
+        <div className="columna">
           <button className="iniciobutton" type="submit">Crear cuenta</button>
-          <Link className= "volverbutton" href="/Principal">
+          <Link className="volverbutton" href="/Principal">
             Volver a la home
           </Link>
           </div>
