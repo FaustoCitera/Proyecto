@@ -62,13 +62,17 @@ export default function Configuracion() {
           onChange={handleContrasenaChange}
         />
       </div>
-      <button onClick={handleSubmit}>Guardar Configuración</button>
-
+      <div className='espaciolog'></div>
+      <div className='fondobutonconfig'>
+      <button className='butonconfig' onClick={handleSubmit}>Guardar</button>
       </div>
       </div>
-      <Link href="/home">
+      </div>
+      <div className='paddingbuttonconfig'>
+      <Link className="VOLVERCONFIG" href="/home">
           Volver
         </Link>
+        </div>
         </div>
     
   );
