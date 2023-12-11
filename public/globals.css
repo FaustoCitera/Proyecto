@@ -317,6 +317,7 @@ justify-content: space-between;
       border: 3px solid #ccc;
       height: 38px;
       
+      
 }
 
 .general .searchdiv .react-autosuggest__suggestions-container{
@@ -324,6 +325,10 @@ justify-content: space-between;
       display: grid;
       background-color: grey;
       border: black 5px;
+      background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
 
 }
 
@@ -332,6 +337,7 @@ justify-content: space-between;
       display: flex;
       justify-content: center;
       align-items: start;
+      
 }
 
 
