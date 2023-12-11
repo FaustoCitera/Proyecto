@@ -29,6 +29,7 @@ flex-direction: column;
       padding: 1%;
       height: 30%;
       background-color: #667EEA;
+      align-self: stretch;
 }
 
 .titulop
@@ -358,4 +359,18 @@ justify-content: space-between;
       padding-top: 10%;
       width:25%; 
       height:25%;
+}
+.boxshadow
+{
+      box-shadow: 20px 20px blue;
+      width: fit-content;
+      padding: 5%;
+      padding-left: 10%;
+      height: fit-content;
+}
+
+.toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 }

@@ -13,7 +13,9 @@ const AuthForm = () => {
 
   return (
     <div className="toggle">
+      <div className="boxshadow">
       {isLogin ? <LoginPage /> : <SignUpPage />}
+
       <div className="toggle2">
 <label className="labelcuenta">
 no tienes una cuenta?
@@ -21,6 +23,7 @@ no tienes una cuenta?
       <button className="toggle3"onClick={toggleForm}>
         {isLogin ? '‎ Registrate' : '‎ Iniciar sesión'}
       </button>
+      </div>
       </div>
     </div>
   );
