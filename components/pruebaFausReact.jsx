@@ -4,21 +4,33 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const handleSubmit = async (e) => {
-    e.preventDefault();
-    const username = e.target.querySelector("#username").value;
-    const password = e.target.querySelector("#password").value;
-    fetch('http://localhost:3001/login', {
+  e.preventDefault();
+  const username = e.target.querySelector("#username").value;
+  const password = e.target.querySelector("#password").value;
+
+  try {
+    const response = fetch('http://localhost:3001/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify ( {
-      username,
-      password,
+      body: JSON.stringify({
+        username,
+        password,
       }),
     });
-    router.push('/home');
-  } 
+
+    if (response.ok) {
+      // Verifica el éxito de la respuesta y redirige solo si es exitosa
+      router.push('/home');
+    } else {
+      // Puedes manejar aquí el caso en que el inicio de sesión no fue exitoso
+      console.error('Inicio de sesión no exitoso');
+    }
+  } catch (error) {
+    console.error('Error al realizar la solicitud de inicio de sesión:', error);
+  }
+};
 
   return (
     <div>
