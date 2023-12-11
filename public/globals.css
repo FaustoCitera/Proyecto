@@ -466,5 +466,14 @@ justify-content: space-between;
 }
 .ConfGeneral
 {
+      display: flex;
+      align-items: center;
+      flex-direction:column ;
       padding-top: 20px;
+}
+
+.imagenpropotions
+{
+      width: 40%;
+      padding-bottom: 10%;
 }
