@@ -60,8 +60,9 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
-      <Autosuggest
+<div className='elepep'>
+    <div className='searchdiv'>
+      <Autosuggest 
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
@@ -70,9 +71,11 @@ const SearchBar = () => {
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
       />
+      
       {/* Agrega un botón de redirección */}
       <button onClick={redirectToAnotherPage}>Buscar</button>
-    </div>
+      </div>
+      </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../public/globals.css";
 
 const BussinesAccount = () => {
   const [business, setBusiness] = useState({
@@ -36,29 +37,33 @@ const BussinesAccount = () => {
   };
 
   return (
-    <div>
-      <h1>Cuenta de Negocio</h1>
       <form>
-        <label>
-          Nombre del Negocio:
-          <input type="text" name="name" onChange={handleChange} />
+      <div className='lappepa'>
+        <div className='labelcolorAcount'>
+      <label className='inputcolorAcount'>Cuenta de Negocio</label>
+      </div>
+      <br />
+        <label className='labelcolorAcount'>
+          <input className='inputcolorAcount' placeholder="Nombre del Negocio"type="text" name="name" onChange={handleChange} />
         </label>
         <br />
-        <label>
-          Ubicación:
-          <input type="text" name="location" onChange={handleChange} />
+        <label className='labelcolorAcount'>
+          <input className='inputcolorAcount' placeholder="Ubicación" type="text" name="location" onChange={handleChange} />
         </label>
         <br />
-        <label>
-          Producto o Servicio:
-          <input type="text" name="productOrService" onChange={handleChange} />
+        <label className='labelcolorAcount'>
+          <input className='inputcolorAcount' placeholder="Producto o Servicio" type="text" name="productOrService" onChange={handleChange} />
         </label>
         <br />
-        <button type="button" onClick={handleSubmit}>
+        <div className='labelcolorAcount'>
+        <button className='inputcolorAcount' type="button" onClick={handleSubmit}>
           Agregar Negocio
         </button>
+        </div>
+        </div>
+    
       </form>
-    </div>
+
   );
 };
 

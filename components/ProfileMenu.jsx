@@ -43,8 +43,10 @@ const ProfileMenu = () => {
         <div className="menu-options">
           <div className='botonfondo'>
           <button className="butoncuenta" onClick={handleLogout}>Cerrar Sesión</button>
+          </div>
+          <div className='botonfondo'>
           {isUsuarioNegociador && (
-            <button onClick={handleSwitchToReseña}>Cambiar a Cuenta de Reseñador</button>
+            <button className="butoncuenta" onClick={handleSwitchToReseña}>Cambiar a Cuenta de Reseñador</button>
           )}
           </div>
           <div className='botonfondo'>

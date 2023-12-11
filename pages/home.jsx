@@ -7,20 +7,14 @@ import ProfileMenu from '../components/ProfileMenu';
 
 const HomePage = () => {
   return (
-    <div className="ppage">
-      <div className=''>
-      <div className=''>
-
+    <div className="ppage"> 
       <header>
         <ProfileMenu />
       </header>
-
-      </div>
-      </div>
       <Head>
         <title>Buscador</title>
       </Head>
-      <main className="s">
+      <main>
         <SearchBar />
       </main>
       
