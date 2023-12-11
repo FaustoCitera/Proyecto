@@ -54,6 +54,9 @@ const BussinesAccount = () => {
         <label className='labelcolorAcount'>
           <input className='inputcolorAcount' placeholder="Producto o Servicio" type="text" name="productOrService" onChange={handleChange} />
         </label>
+        <label className='labelcolorAcount'>
+          <input className='inputcolorAcount' type="file" onChange={handleChange} />
+        </label>
         <br />
         <div className='labelcolorAcount'>
         <button className='inputcolorAcount' type="button" onClick={handleSubmit}>
