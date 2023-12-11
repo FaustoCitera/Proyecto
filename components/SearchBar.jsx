@@ -60,7 +60,8 @@ const SearchBar = () => {
   };
 
   return (
-<div className='elepep'>
+<div className="randm">    
+<div className='general'>
     <div className='searchdiv'>
       <Autosuggest 
         suggestions={suggestions}
@@ -71,9 +72,12 @@ const SearchBar = () => {
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
       />
-      
+      </div>
+
       {/* Agrega un botón de redirección */}
+      <div className="buttonserch">
       <button onClick={redirectToAnotherPage}>Buscar</button>
+      </div>
       </div>
       </div>
   );
