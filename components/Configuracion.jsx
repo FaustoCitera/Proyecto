@@ -34,6 +34,7 @@ export default function Configuracion() {
   return (
     <div>
       <h2>Configuración</h2>
+      <img src="/assets/img/perfil.png"/>
       <div>
         <label htmlFor="nombreUsuario">Nombre de usuario:</label>
         <input
