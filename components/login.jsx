@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import LoginWithGoogle from '../components/LoginWithGoogle';
-
-
+import iconoUsuario from './iconoUsuario.jpg';
 
 const LoginPage = () => {
   const [password, setPassword] = useState('');
@@ -47,7 +46,7 @@ const LoginPage = () => {
         </div>
           <form onSubmit={handleSubmit}>
              <label className="labelcolor">
-              <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+             <img src={iconoUsuario}/> <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
         <label className="labelcolor">
