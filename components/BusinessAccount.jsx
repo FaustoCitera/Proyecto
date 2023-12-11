@@ -55,15 +55,15 @@ const BussinesAccount = () => {
         </label>
         <br />
         <label className='labelcolorAcountProduct'>
-          <input className='inputcolorAcount' id='producto' placeholder="Producto o Servicio" type="text" name="productOrService" onChange={handleChange} />
+          <input className='inputcolorAcount' id='producto' placeholder="Describe tu negocio..." type="text" name="productOrService" onChange={handleChange} />
         </label>
         <br/>
         <label className='labelcolorAcount'>
           <input className='inputcolorAcount' id='imagen' type="file" onChange={handleChange} />
         </label>
         <br />
-        <div className='labelcolorAcount'>
-        <button className='inputcolorAcount' type="button" onClick={handleSubmit}>
+        <div className='labelcolorbuton'>
+        <button className='inputcolorbuton' type="button" onClick={handleSubmit}>
           Crear Negocio
         </button>
         </div>
