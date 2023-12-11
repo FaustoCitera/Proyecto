@@ -43,7 +43,8 @@ const SignUpPage = () => {
   };
     return (
       <div className="page">
-        <img src="/assets/img/logo.png" />
+        <div className="pge" >
+        <img className="imglogin" src="/assets/img/logo.png" />
         <div className="Iniciosign">
         <h2 className="h22">Crear cuenta</h2>
         </div>
@@ -75,6 +76,7 @@ const SignUpPage = () => {
           </Link>
           </div>
         </form>
+        </div>
       </div>
       
     );
