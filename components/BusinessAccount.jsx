@@ -43,15 +43,18 @@ const BussinesAccount = () => {
       <form>
       <div className='Account'>
         <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' id='nombre' placeholder="Nombre del Negocio"type="text" name="name" onChange={handleChange} />
+        <img src="/assets/img/manos.png" width="25" height="25" />
+          <input className='inputcolorAcount' id='nombre' placeholder="‎ Nombre del Negocio"type="text" name="name" onChange={handleChange} />
         </label>
         <br />
         <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' id='ubicacion' placeholder="Ubicación" type="text" name="location" onChange={handleChange} />
+        <img src="/assets/img/ubicacion.png" width="25" height="25" />
+          <input className='inputcolorAcount' id='ubicacion' placeholder="‎ Ubicación" type="text" name="location" onChange={handleChange} />
         </label>
         <br />
         <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' id='dueño' placeholder="Nombre Del Dueño" type="text" name="dueño" onChange={handleChange} />
+        <img src="/assets/img/usuario1.png" width="25" height="25" />
+          <input className='inputcolorAcount' id='dueño' placeholder="‎ Nombre Del Dueño" type="text" name="dueño" onChange={handleChange} />
         </label>
         <br />
         <label className='labelcolorAcountProduct'>

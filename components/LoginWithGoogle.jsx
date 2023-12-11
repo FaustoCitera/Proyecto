@@ -34,7 +34,7 @@ const Login = () => {
   };
 
   return (
-    <button onClick={handleLogin}>Iniciar sesión con Google</button>
+    <button onClick={handleLogin}>‎ Iniciar sesión con Google</button>
   );
 }
 
