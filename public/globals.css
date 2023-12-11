@@ -48,6 +48,8 @@ flex-direction: column;
       font-size: x-large;
       padding: 1%;
       float: right;
+      position: absolute;
+      right:0%
 }
 .titulohomelog
 {
@@ -287,18 +289,48 @@ justify-content: space-between;
 {
       display: flex;
     justify-content: center;
-    box-sizing: border-box;
-    border: 3px solid #D2D2D2;
+
+
+}
+
+.general .searchdiv input
+{
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+      border: 3px solid #ccc;
+      height: 38px;
+}
+
+.general .searchdiv .react-autosuggest__suggestions-container{
+      background-color: red;
+}
+
+.general{
+      border-radius: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+}
+
+
+.buttonserch
+{
+      padding: 4px;
+      display: flex;
       font-size: 16px;
       color: white;
       background-color: #667EEA;
       max-width: fit-content;
-
+      align-items: center;
+      border: 3px solid #ccc;
+      border-radius: 10%;
 }
-
-.elepep
+.randm
 {
       display: flex;
-      justify-content: center;
-      padding-top: 5%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    width: -webkit-fill-available;
 }
