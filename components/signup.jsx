@@ -79,7 +79,7 @@ const SignUpPage = () => {
         <br />
         <div className="columna">
           <button className="iniciobutton" type="submit">Crear cuenta</button>
-          <Link className="volverbutton" href="/Principal">
+          <Link className="volverbutton" href="./Principal">
             Volver a la home
           </Link>
           </div>

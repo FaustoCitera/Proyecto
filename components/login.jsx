@@ -59,7 +59,7 @@ const LoginPage = () => {
         <button className="iniciobutton" type="submit">
           Iniciar sesión
         </button >
-        <Link className= "volverbutton" href="/Principal">
+        <Link className= "volverbutton" href="./Principal">
           Volver a la home
         </Link>
         </div>
