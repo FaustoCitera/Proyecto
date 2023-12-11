@@ -22,20 +22,20 @@ const LoginPage = () => {
     const password = e.target.querySelector("#password").value;
     fetch('http://localhost:3001/login', {
       method: 'POST',
-      body: {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify ( {
       username,
-      password
-      }
-    }).then((r) => r.text())
-      .then((d) => {
-        console.log(d)
-        //router.push('home') 
-      })
-      .catch((e) => {
-        console.log(e)
-      });
-  
-}
+      password,
+      }),
+    });
+    if (response.ok) {
+      router.push('/home');
+    } else {
+      console.error('Error en la solicitud:', response.statusText);
+    }
+  } 
   return (
   <div className="pe">
     <div className="page">
@@ -73,5 +73,6 @@ const LoginPage = () => {
   </div>
   );
 }
+
 
     export default LoginPage;

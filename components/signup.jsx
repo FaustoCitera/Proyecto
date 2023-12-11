@@ -24,8 +24,6 @@ const SignUpPage = () => {
 
 
   const handleSubmit = async (e) => {
-
-    alert("corriendo")
     e.preventDefault();
     const username = e.target.querySelector("#username").value;
     const email = e.target.querySelector("#email").value;
