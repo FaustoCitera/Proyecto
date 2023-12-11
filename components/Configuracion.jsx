@@ -38,6 +38,7 @@ export default function Configuracion() {
       <h2 className='tituloconfig'>Configuración</h2>
       </div>
       <div className='ConfGeneral'>
+      <img src="/assets/img/perfil.png"/>
       <div className='labelconfig'>       
         <label htmlFor="nombreUsuario"></label>
         <input 
