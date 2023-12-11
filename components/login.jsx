@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import LoginWithGoogle from '../components/LoginWithGoogle';
-import iconoUsuario from './iconoUsuario.jpg';
 
 const LoginPage = () => {
   const [password, setPassword] = useState('');
@@ -41,19 +40,22 @@ const LoginPage = () => {
   <div className="pe">
     <div className="page">
       <div className="pge">
+      <img src="/assets/img/logo.png"  />
         <div className="Inicioc">
         <h2 className="h22">Iniciar sesión</h2>
         </div>
           <form onSubmit={handleSubmit}>
              <label className="labelcolor">
-             <img src={iconoUsuario}/> <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
+             <img src="/assets/img/usuario1.png" width="25" height="25" /> <input className="inputcolor" id="username" type="text" placeholder="Usuario" value={user} onChange={handleUserChange} />
         </label>
         <br />
         <label className="labelcolor">
+        <img src="/assets/img/clave1.png" width="25" height="25" />
            <input className="inputcolor" id="password" type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} />
         </label >
         <br />
         <label className="googlecolor">
+        <img src="/assets/img/google.png" width="25" height="25" />
          <LoginWithGoogle />
         </label>
         <br/>

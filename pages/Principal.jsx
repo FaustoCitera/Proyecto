@@ -10,6 +10,7 @@ const HomePage = () => {
       <h1>Bienvenido a la página principal</h1>
       </div>
       </div>
+      <img src="/assets/img/criTIC.png" width="250" height="250" />
       <div className='textop'>
       <Link className='textorelleno' href="/authForm">
         Iniciar Sesion o Crear cuenta
