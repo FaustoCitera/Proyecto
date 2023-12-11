@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const App = () => {
   const [business, setBusiness] = useState({});
@@ -98,6 +99,9 @@ const App = () => {
           </div>
         ))}
       </div>
+      <Link  href="/home">
+          Volver al buscador
+        </Link>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import '../public/globals.css';
-import Principal from './Principal';
+import Principal from '../components/Principal';
 
 const HomePage = () => {
   return (

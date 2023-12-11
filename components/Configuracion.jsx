@@ -14,12 +14,22 @@ export default function Configuracion() {
     setContrasena(event.target.value);
   };
 
-  const handleGuardarConfiguracion = () => {
-    // Aquí puedes agregar lógica para guardar los cambios en el nombre de usuario y contraseña.
-    // Puedes realizar una llamada a una API o utilizar el almacenamiento local, dependiendo de tus necesidades.
-    console.log('Nombre de usuario actualizado:', nombreUsuario);
-    console.log('Contraseña actualizada:', contrasena);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const username = e.target.querySelector("#username").value;
+    const password = e.target.querySelector("#password").value;
+    fetch('http://localhost:3001/config', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify ( {
+      username,
+      password,
+      }),
+    });
+    router.push('/home');
+  }; 
 
   return (
     <div>
@@ -28,7 +38,7 @@ export default function Configuracion() {
         <label htmlFor="nombreUsuario">Nombre de usuario:</label>
         <input
           type="text"
-          id="nombreUsuario"
+          id="username"
           value={nombreUsuario}
           onChange={handleNombreUsuarioChange}
         />
@@ -37,12 +47,12 @@ export default function Configuracion() {
         <label htmlFor="contrasena">Contraseña:</label>
         <input
           type="password"
-          id="contrasena"
+          id="password"
           value={contrasena}
           onChange={handleContrasenaChange}
         />
       </div>
-      <button onClick={handleGuardarConfiguracion}>Guardar Configuración</button>
+      <button onClick={handleSubmit}>Guardar Configuración</button>
       <Link href="/home">
           Volver
         </Link>
