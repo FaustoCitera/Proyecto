@@ -32,20 +32,29 @@ export default function Configuracion() {
   }; 
 
   return (
-    <div>
-      <h2>Configuración</h2>
-      <div>
-        <label htmlFor="nombreUsuario">Nombre de usuario:</label>
-        <input
+    <div className='ppage'>
+        <div className='ConfPosition'>
+          <div className='fondoazul'>
+      <h2 className='tituloconfig'>Configuración</h2>
+      </div>
+      <div className='ConfGeneral'>
+      <div className='labelconfig'>       
+        <label htmlFor="nombreUsuario"></label>
+        <input 
+        className="inputconfig"
+        placeholder='Nombre de Usuario'
           type="text"
           id="username"
           value={nombreUsuario}
           onChange={handleNombreUsuarioChange}
         />
       </div>
-      <div>
-        <label htmlFor="contrasena">Contraseña:</label>
-        <input
+      <div className='espaciolog'></div>
+      <div className='labelconfig'>
+        <label htmlFor="contrasena"></label>
+        <input      
+        className="inputconfig"
+        placeholder='Contraseña'
           type="password"
           id="password"
           value={contrasena}
@@ -53,9 +62,13 @@ export default function Configuracion() {
         />
       </div>
       <button onClick={handleSubmit}>Guardar Configuración</button>
+
+      </div>
+      </div>
       <Link href="/home">
           Volver
         </Link>
-    </div>
+        </div>
+    
   );
 }
