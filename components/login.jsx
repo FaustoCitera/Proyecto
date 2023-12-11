@@ -41,6 +41,8 @@ const LoginPage = () => {
     <div className="page">
       <div className="pge">
       <img className="imglogin"src="/assets/img/logo.png"  />
+      <img src="/assets/img/logo.png" />
+
         <div className="Inicioc">
         <h2 className="h22">Iniciar sesión</h2>
         </div>
