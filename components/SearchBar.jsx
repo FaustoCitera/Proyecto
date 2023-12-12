@@ -13,7 +13,20 @@ const SearchBar = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }),
+    })
+    .then(async (response) => {
+      if (response.ok) {
+        console.log('Todo bien');
+        //
+        const data = await response.json();
+        console.log(data)
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+      }
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
   ];
 
   const getSuggestions = (inputValue) => {

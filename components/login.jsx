@@ -20,27 +20,28 @@ const LoginPage = () => {
     e.preventDefault();
     const username = e.target.querySelector("#username").value;
     const password = e.target.querySelector("#password").value;
-  
-    try {
-      const response = fetch('http://localhost:3001/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username,
-          password,
-        }),
-      });
-  
+    fetch('http://localhost:3001/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify ( {
+      username,
+      password,
+      }),
+    })
+    .then((response) => {
       if (response.ok) {
-        router.push('/home');
+        console.log('Todo bien');
+        alert("Usuario" + username + "creado correctamente")
+        router.push('/home'); 
       } else {
-        console.error('Inicio de sesión no exitoso');
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
       }
-    } catch (error) {
-      console.error('Error al realizar la solicitud de inicio de sesión:', error);
-    }
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
   };
   return (
   <div className="pe">

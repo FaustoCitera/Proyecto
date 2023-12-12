@@ -41,11 +41,18 @@ const SignUpPage = () => {
         'Content-Type': 'application/json',
       },
       body: body,
-    }).then((r) => r.json())
-      .then((d) => console.log(d))
-      .catch((e) => console.log(e));
-    //router.push('home');
-
+    }).then((response) => {
+      if (response.ok) {
+        console.log('Todo bien');
+        alert("Bienvenido" + username)
+        router.push('/home'); 
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+      }
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
   };
     return (
       <div className="page">

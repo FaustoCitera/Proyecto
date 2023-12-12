@@ -35,8 +35,19 @@ const BussinesAccount = () => {
           productOrService,
           img,
         }),
-      });
-      
+      })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Todo bien');
+          alert("Negocio" + name + "creado correctamente")
+          router.push('/home'); 
+        } else {
+          console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        }
+      })
+      .catch((error) => {
+        console.log('Hubo un problema con la petición Fetch:' + error.message);
+      }) 
   };
 
   return (
