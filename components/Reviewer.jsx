@@ -52,6 +52,7 @@ const App = () => {
     <div className="ppage">
       <div className="fondoazul">
         <h1>{business.name}</h1>
+         aca tiene que ir el logo blancoS
         </div>
        <div>
        <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
