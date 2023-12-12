@@ -52,6 +52,7 @@ export default function Configuracion() {
       <img className="imagenpropotions" src="/assets/img/perfil.png"/>
       <div className='labelconfig'>       
         <label htmlFor="nombreUsuario"></label>
+        <img src="/assets/img/usuario1.png" width="25" height="25" />
         <input 
         className="inputconfig"
         placeholder=' Nombre de Usuario'
@@ -64,6 +65,7 @@ export default function Configuracion() {
       <div className='espaciolog'></div>
       <div className='labelconfig'>
         <label htmlFor="contrasena"></label>
+        <img src="/assets/img/clave1.png" width="25" height="25" />
         <input      
         className="inputconfig"
         placeholder=' Contraseña'

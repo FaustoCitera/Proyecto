@@ -13,7 +13,7 @@ const HomePage = () => {
       <img className="imginicio" src="/assets/img/criTIC.png" />
       <div className='textop'>
       <Link className='textorelleno' href="/authForm">
-        Iniciar Sesion o Crear cuenta
+        Crear Cuenta o Iniciar Sesión
       </Link>
       </div>
       </div>
