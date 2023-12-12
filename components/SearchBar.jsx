@@ -8,17 +8,12 @@ const SearchBar = () => {
   const router = useRouter();
 
   const businesses = [
-    { id: 1, name: 'McDonalds' },
-    { id: 2, name: 'Galidon' },
-    { id: 3, name: 'Betos Lomitos' },
-
     fetch('http://localhost:3001/busqueda', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     }),
-    router.push('/home'),
   ];
 
   const getSuggestions = (inputValue) => {
