@@ -57,16 +57,16 @@ const App = () => {
   };
 
   return (
-    <div className="ppage">
+    <div className="randomxd">
       {showSearchBar ? (
         <SearchBar />
       ) : (
         <div>
-          <div className="fondoazul">
+          <div className="">
             <h1>{business.name}</h1>
             {/* Aquí va el logo blancoS */}
           </div>
-          <div>
+          <div className='elwith'>
             <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
             <p className='estrellitas'>Calificación: {rating} estrellas</p>
             {[1, 2, 3, 4, 5].map((star) => (
@@ -103,14 +103,16 @@ const App = () => {
                 onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
               />
             </div>
+            <div className='flexxd'>
             <div className='recubrebuton'>
               <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
             </div>
           </div>
+          </div>
           <div>
             {reviews.map((review) => (
               <div key={review._id}>
-                <p>{review.reviewer} dijo: {review.comment}</p>
+                <p>{review.reviewer}: {review.comment}</p>
                 <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
             <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
             <textarea
@@ -123,9 +125,11 @@ const App = () => {
           </div>
         </div>
       )}
-      <Link href="#" onClick={handleReturnToSearch}>
-        Volver al buscador
+      <div class="paddingbuttonconfig2">
+      <Link className='VOLVERCONFIG' href="#" onClick={handleReturnToSearch}>
+        Volver
       </Link>
+      </div>
     </div>
   );
 };

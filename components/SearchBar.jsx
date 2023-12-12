@@ -71,7 +71,10 @@ const SearchBar = () => {
         <Reviewer />
       ) : (
         <div className='general'>
-          <img src="/assets/img/criTIC.png" width="40%" />
+          <div className='imgticafuera'>
+          <img className='imgticadentro' src="/assets/img/criTIC.png" width="40%" />
+          </div>
+          <div className='serchybuton'>
           <div className='searchdiv'>
             <Autosuggest
               suggestions={suggestions}
@@ -90,6 +93,7 @@ const SearchBar = () => {
           <div className="buttonserch">
             <button onClick={handleSearchButtonClick}>Buscar</button>
           </div>
+        </div>
         </div>
       )}
     </div>
