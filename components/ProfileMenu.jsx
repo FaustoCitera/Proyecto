@@ -12,7 +12,26 @@ const ProfileMenu = () => {
   };
 
   const handleLogout = () => {
-    router.push('authForm');
+    e.preventDefault();
+    fetch('http://localhost:3001/signout', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((response) => {
+      if (response.ok) {
+        console.log('Todo bien');
+        alert("Sign out correcto")
+        router.push('/home'); 
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        alert("error")
+      }
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
   };
 
   const handleSwitchToBusinessAccount = () => {
