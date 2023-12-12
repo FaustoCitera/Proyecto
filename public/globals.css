@@ -594,3 +594,13 @@ justify-content: space-between;
 {
       float: inline-end;
 }
+.estrellitas
+{
+ padding-left: 30px;
+ padding-top:10px ;
+}
+.strellacolor
+{
+      padding: 2%;
+
+}

@@ -55,9 +55,10 @@ const App = () => {
         </div>
        <div>
        <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
-        <p>Calificación: {rating} estrellas</p>
+        <p className='estrellitas'>Calificación: {rating} estrellas</p>
         {[1, 2, 3, 4, 5].map((star) => (
           <span
+          className='strellacolor'
             key={star}
             onMouseEnter={() => setHoveredRating(star)}
             onMouseLeave={() => setHoveredRating(0)}
@@ -67,7 +68,7 @@ const App = () => {
               color: hoveredRating >= star || rating >= star ? 'orange' : 'gray',
             }}
           >
-            ⭐
+            ☆
           </span>
         ))}
       </div>
