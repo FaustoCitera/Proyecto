@@ -52,8 +52,8 @@ const App = () => {
     <div className="ppage">
       <div className="fondoazul">
         <h1>{business.name}</h1>
-        </div>
         <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
+        </div>
        <div>
         <p>Calificación: {rating} estrellas</p>
         {[1, 2, 3, 4, 5].map((star) => (
@@ -72,18 +72,24 @@ const App = () => {
         ))}
       </div>
       <div className="dejacomentario">
+        <div className='spaceinbetween'>
         <input
+        className='inputNoMbre'
           type="text"
           placeholder=" Nombre:"
           value={newReview.reviewer}
           onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
         />
+        </div>
+        <div className='spaceinbetween'>
         <textarea
+        className='textareat'
           placeholder=" Escribe un comentario..."
           value={newReview.comment}
           onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
         />
-        <button onClick={handleReviewSubmit}>Enviar reseña</button>
+        </div>
+        <button onClick={handleReviewSubmit}> Agregar comentario</button>
       </div>
       <div>
         {reviews.map((review) => (
