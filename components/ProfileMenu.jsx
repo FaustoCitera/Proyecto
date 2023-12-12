@@ -44,6 +44,8 @@ const ProfileMenu = () => {
           <div className='botonfondo'>
           <button className="butoncuenta" onClick={handleLogout}>Cerrar Sesión</button>
           </div>
+          <div className="espacioez" ></div>
+
           <div className='botonfondo'>
           {isUsuarioNegociador && (
             <button className="butoncuenta" onClick={handleSwitchToReseña}>Cambiar a Cuenta de Reseñador</button>
@@ -56,6 +58,7 @@ const ProfileMenu = () => {
             </button>
           )}
           </div>
+          <div className="espacioez" ></div>
           <div className='botonfondo'>
           <button className="butoncuenta" onClick={handleSettings}>Configuración</button>
         </div>
