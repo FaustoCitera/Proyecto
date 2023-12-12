@@ -48,6 +48,7 @@ const SignUpPage = () => {
         router.push('/home'); 
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        alert("error")
       }
     })
     .catch((error) => {
