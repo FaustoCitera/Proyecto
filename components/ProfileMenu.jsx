@@ -9,7 +9,7 @@ const ProfileMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLogout = () => {
+  const handleLogout = (e) => {
     e.preventDefault();
     fetch('http://localhost:3001/signout', {
       method: 'GET',
