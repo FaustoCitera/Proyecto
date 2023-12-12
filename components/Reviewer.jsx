@@ -53,9 +53,8 @@ const App = () => {
       <div className="fondoazul">
         <h1>{business.name}</h1>
         </div>
-        <img src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
-
-      <div>
+        <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
+       <div>
         <p>Calificación: {rating} estrellas</p>
         {[1, 2, 3, 4, 5].map((star) => (
           <span
@@ -72,15 +71,15 @@ const App = () => {
           </span>
         ))}
       </div>
-      <div>
+      <div className="dejacomentario">
         <input
           type="text"
-          placeholder="Tu nombre"
+          placeholder="nombre:"
           value={newReview.reviewer}
           onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
         />
         <textarea
-          placeholder="Escribe tu reseña"
+          placeholder="Escribe un comentario..."
           value={newReview.comment}
           onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
         />
