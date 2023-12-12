@@ -85,8 +85,8 @@ const BussinesAccount = () => {
           <input className='inputcolorAcount' id='dueño' placeholder="‎ Nombre Del Dueño" type="text" name="dueño" onChange={handleChange} />
         </label>
         <br />
-        <label className='labelcolorAcountProduct'>
-          <input className='inputcolorAcount' id='producto' placeholder="Describe tu negocio..." type="text" name="productOrService" onChange={handleChange} />
+        <label>
+          <textarea className='labelcolorAcountProduct' id='producto' placeholder="Describe tu negocio..." type="text" name="productOrService"   onChange={handleChange} />
         </label>
         <br/>
         <label className='labelcolorAcount'>
