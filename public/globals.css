@@ -533,7 +533,8 @@ justify-content: space-between;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 2.5%;
+      padding: 1.5%;
+      width: fit-content;
 }
 
 .butonconfig
@@ -551,7 +552,7 @@ justify-content: space-between;
 .textareat
 {
       display: flex;
-      width: 30%;
+      width: 300px;
       height: 70px;
       border: 1px solid #ccc;
     border-radius: 5px;
@@ -572,7 +573,24 @@ justify-content: space-between;
 
 .spaceinbetween
 {
-      padding-bottom: 1%;
-      width: -webkit-fill-available;
+      padding-bottom: 5%;
 
+}
+.buttonreview
+{
+      color: #FFFFFF;
+      border-radius: 5px;
+      font-size: 16px;
+      display: flex;
+      background-color: #667EEA;
+      padding: 0.5%;
+      align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+
+}
+.recubrebuton
+{
+      float: inline-end;
 }

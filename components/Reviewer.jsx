@@ -52,9 +52,9 @@ const App = () => {
     <div className="ppage">
       <div className="fondoazul">
         <h1>{business.name}</h1>
-        <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
         </div>
        <div>
+       <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
         <p>Calificación: {rating} estrellas</p>
         {[1, 2, 3, 4, 5].map((star) => (
           <span
@@ -89,7 +89,9 @@ const App = () => {
           onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
         />
         </div>
-        <button onClick={handleReviewSubmit}> Agregar comentario</button>
+        <div className='recubrebuton'>
+        <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
+      </div>
       </div>
       <div>
         {reviews.map((review) => (
