@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import "../public/globals.css";
-import Reviewer from "./Reviewer";
 
 const BussinesAccount = () => {
-  //const [img, setImg] = useState('');
   const [business, setBusiness] = useState({
     name: '',
     location: '',
@@ -17,10 +15,6 @@ const BussinesAccount = () => {
       ...business,
       [e.target.name]: e.target.value,
     });
-    // setImg({
-    //   ...img,
-    //   [e.target.name]: e.target.value,
-    // });
   };
 
   const handleSubmit = async (e) => {
@@ -36,13 +30,7 @@ const BussinesAccount = () => {
     for (const value of formData.values()) {
       console.log(value);
     }
-  
-    
-    // formData.append(name);
-    // formData.append(location);
-    // formData.append(owner);
-    // formData.append(productOrService);
-    // formData.append(img);
+
     console.log()
       fetch('http://localhost:3001/business', {
         method: 'POST',

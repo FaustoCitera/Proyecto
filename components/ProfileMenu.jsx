@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 
 const ProfileMenu = () => {
@@ -54,7 +52,7 @@ const ProfileMenu = () => {
     <div className="profile-menu">
       <div className='fondoazul'>
         <div className='titulohomelog'>
-      <FontAwesomeIcon icon={faUser} onClick={toggleMenu} />
+      <img src="/assets/img/perfilsito.png" width="50" height="50" onClick={toggleMenu}/>
       </div>
       </div>
       <div className='titulohome'>
