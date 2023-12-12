@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Autosuggest from 'react-autosuggest';
 import { useRouter } from 'next/router';
+import Reviewer from "./Reviewer";
 
 const SearchBar = () => {
   const [value, setValue] = useState('');
