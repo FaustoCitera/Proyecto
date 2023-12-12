@@ -16,51 +16,58 @@ const BussinesAccount = () => {
     });
   };
 
+
   const handleSubmit = async () => {
-    try {
-      const response = fetch('http://localhost:3001/business', {
+    const name = e.target.querySelector("#nombre").value;
+    const location = e.target.querySelector("#ubicacion").value;
+    const owner = e.target.querySelector("#dueño").value;
+    const productOrService = e.target.querySelector("#producto").value;
+    const img = e.target.querySelector("#imagen").value;
+      fetch('http://localhost:3001/business', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(business),
+        body: JSON.stringify({
+          name,
+          location,
+          owner,
+          productOrService,
+          img,
+        }),
       });
-
-      if (response.ok) {
-        console.log('Negocio agregado con éxito');
-      } else {
-        console.error('Error al agregar el negocio');
-      }
-    } catch (error) {
-      console.error('Error de red:', error);
-    }
+      
   };
 
   return (
       <form>
-      <div className='lappepa'>
-        <div className='labelcolorAcount'>
-      <label className='inputcolorAcount'>Cuenta de Negocio</label>
-      </div>
-      <br />
+      <div className='Account'>
         <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' placeholder="Nombre del Negocio"type="text" name="name" onChange={handleChange} />
+        <img src="/assets/img/manos.png" width="25" height="25" />
+          <input className='inputcolorAcount' id='nombre' placeholder="‎ Nombre del Negocio"type="text" name="name" onChange={handleChange} />
         </label>
         <br />
         <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' placeholder="Ubicación" type="text" name="location" onChange={handleChange} />
+        <img src="/assets/img/ubicacion.png" width="25" height="25" />
+          <input className='inputcolorAcount' id='ubicacion' placeholder="‎ Ubicación" type="text" name="location" onChange={handleChange} />
         </label>
         <br />
         <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' placeholder="Producto o Servicio" type="text" name="productOrService" onChange={handleChange} />
-        </label>
-        <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' type="file" onChange={handleChange} />
+        <img src="/assets/img/usuario1.png" width="25" height="25" />
+          <input className='inputcolorAcount' id='dueño' placeholder="‎ Nombre Del Dueño" type="text" name="dueño" onChange={handleChange} />
         </label>
         <br />
-        <div className='labelcolorAcount'>
-        <button className='inputcolorAcount' type="button" onClick={handleSubmit}>
-          Agregar Negocio
+        <label className='labelcolorAcountProduct'>
+          <input className='inputcolorAcount' id='producto' placeholder="Describe tu negocio..." type="text" name="productOrService" onChange={handleChange} />
+        </label>
+        <br/>
+        <label className='labelcolorAcount'>
+          <input className='inputcolorAcount' id='imagen' type="file" onChange={handleChange} />
+        </label>
+        <br />
+        <div className='labelcolorbuton'>
+        <button className='inputcolorbuton' type="button" onClick={handleSubmit}>
+          Crear Negocio
         </button>
         </div>
         </div>

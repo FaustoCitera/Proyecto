@@ -7,7 +7,7 @@ const HomePage = () => {
       <div className="prueba">
       <div className='fondoazul'>
         <div className='titulop'>
-      <h1>Bienvenido a la página principal</h1>
+      <h1>Bienvenid@</h1>
       </div>
       </div>
       <img className="imginicio" src="/assets/img/criTIC.png" />

@@ -14,38 +14,66 @@ export default function Configuracion() {
     setContrasena(event.target.value);
   };
 
-  const handleGuardarConfiguracion = () => {
-    // Aquí puedes agregar lógica para guardar los cambios en el nombre de usuario y contraseña.
-    // Puedes realizar una llamada a una API o utilizar el almacenamiento local, dependiendo de tus necesidades.
-    console.log('Nombre de usuario actualizado:', nombreUsuario);
-    console.log('Contraseña actualizada:', contrasena);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const username = e.target.querySelector("#username").value;
+    const password = e.target.querySelector("#password").value;
+    fetch('http://localhost:3001/config', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify ( {
+      username,
+      password,
+      }),
+    });
+    router.push('/home');
+  }; 
 
   return (
-    <div>
-      <h2>Configuración</h2>
-      <div>
-        <label htmlFor="nombreUsuario">Nombre de usuario:</label>
-        <input
+    <div className='ppage'>
+        <div className='ConfPosition'>
+          <div className='fondoazul'>
+      <h2 className='tituloconfig'>Configuración</h2>
+      </div>
+      <div className='ConfGeneral'>
+      <img className="imagenpropotions" src="/assets/img/perfil.png"/>
+      <div className='labelconfig'>       
+        <label htmlFor="nombreUsuario"></label>
+        <input 
+        className="inputconfig"
+        placeholder='Nombre de Usuario'
           type="text"
-          id="nombreUsuario"
+          id="username"
           value={nombreUsuario}
           onChange={handleNombreUsuarioChange}
         />
       </div>
-      <div>
-        <label htmlFor="contrasena">Contraseña:</label>
-        <input
+      <div className='espaciolog'></div>
+      <div className='labelconfig'>
+        <label htmlFor="contrasena"></label>
+        <input      
+        className="inputconfig"
+        placeholder='Contraseña'
           type="password"
-          id="contrasena"
+          id="password"
           value={contrasena}
           onChange={handleContrasenaChange}
         />
       </div>
-      <button onClick={handleGuardarConfiguracion}>Guardar Configuración</button>
-      <Link href="/home">
+      <div className='espaciolog'></div>
+      <div className='fondobutonconfig'>
+      <button className='butonconfig' onClick={handleSubmit}>Guardar</button>
+      </div>
+      </div>
+      </div>
+      <div className='paddingbuttonconfig'>
+      <Link className="VOLVERCONFIG" href="/home">
           Volver
         </Link>
-    </div>
+        </div>
+        </div>
+    
   );
 }
