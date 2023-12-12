@@ -11,17 +11,15 @@ const SearchBar = () => {
     { id: 1, name: 'McDonalds' },
     { id: 2, name: 'Galidon' },
     { id: 3, name: 'Betos Lomitos' },
-    // Agrega más negocios aquí
+
+    fetch('http://localhost:3001/busqueda', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }),
+    router.push('/home'),
   ];
-
-  /*const [businesses, setBusinesses] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3001/negocios.') 
-      .then(response => response.json())
-      .then(data => setBusinesses(data))
-      .catch(error => console.error('Error fetching businesses:', error));
-  }, []);*/
 
   const getSuggestions = (inputValue) => {
     const filteredBusinesses = businesses.filter((business) =>

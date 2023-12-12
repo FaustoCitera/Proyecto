@@ -35,15 +35,13 @@ const SignUpPage = () => {
       password
     });
 
-    console.log(body);
-
     fetch('http://localhost:3001/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: body,
-    }).then((r) => r.text())
+    }).then((r) => r.json())
       .then((d) => console.log(d))
       .catch((e) => console.log(e));
     //router.push('home');
