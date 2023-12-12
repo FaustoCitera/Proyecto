@@ -54,7 +54,7 @@ export default function Configuracion() {
         <label htmlFor="nombreUsuario"></label>
         <input 
         className="inputconfig"
-        placeholder='Nombre de Usuario'
+        placeholder=' Nombre de Usuario'
           type="text"
           id="username"
           value={nombreUsuario}
@@ -66,7 +66,7 @@ export default function Configuracion() {
         <label htmlFor="contrasena"></label>
         <input      
         className="inputconfig"
-        placeholder='Contraseña'
+        placeholder=' Contraseña'
           type="password"
           id="password"
           value={contrasena}

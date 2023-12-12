@@ -74,12 +74,12 @@ const App = () => {
       <div className="dejacomentario">
         <input
           type="text"
-          placeholder="nombre:"
+          placeholder=" Nombre:"
           value={newReview.reviewer}
           onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
         />
         <textarea
-          placeholder="Escribe un comentario..."
+          placeholder=" Escribe un comentario..."
           value={newReview.comment}
           onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
         />

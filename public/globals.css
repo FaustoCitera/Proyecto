@@ -491,13 +491,9 @@ justify-content: space-between;
 }
 .fondobutonconfig
 {
-      color: #FFFFFF;
-      border-radius: 5px;
-      font-size: 16px;
-      background-color: #667EEA;
-      padding: 1%;
+      display: flex;
+      align-items: center;
       text-align: center;
-      padding-top: 5px;
 }
 .VOLVERCONFIG
 {
@@ -516,7 +512,7 @@ justify-content: space-between;
 {
       display: flex;
       padding-left: 5%;
-      padding-top: 120px;
+      padding-top: 180px;
       padding-right: 10px;
 }
 .espacioez
@@ -533,5 +529,18 @@ justify-content: space-between;
 
 .dejacomentario
 {
+
+}
+
+.butonconfig
+{
+      color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #667EEA;
+    text-align: center;
+    padding: 5%;
+    width: 85px;
+
 
 }
