@@ -373,14 +373,14 @@ justify-content: space-between;
       padding-top: 10%;
       width:25%; 
       height:25%;
-}
+}     
 .boxshadow
 {
       box-shadow: 20px 20px #667EEA;
       width: fit-content;
       padding: 5%;
       padding-left: 10%;
-      padding-bottom: 5%;
+      padding-bottom: 2%;
       height: fit-content;
 }
 
