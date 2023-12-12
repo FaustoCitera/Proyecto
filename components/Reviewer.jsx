@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import SearchBar from './SearchBar'; // Importa el componente SearchBar
 
 const App = () => {
   const [business, setBusiness] = useState({});
@@ -7,6 +8,7 @@ const App = () => {
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ reviewer: '', comment: '' });
   const [hoveredRating, setHoveredRating] = useState(0);
+  const [showSearchBar, setShowSearchBar] = useState(false); // Nuevo estado para controlar la visibilidad de SearchBar
 
   const businessId = 'your-business-id';
 
@@ -18,6 +20,7 @@ const App = () => {
         setBusiness(data);
         setRating(data.rating);
         setReviews(data.reviews);
+        setShowSearchBar(true); // Muestra SearchBar al cargar los datos del negocio
       } catch (error) {
         console.error('Error fetching business data', error);
       }
@@ -48,70 +51,81 @@ const App = () => {
     }
   };
 
+  const handleReturnToSearch = () => {
+    // Oculta el componente Reviewer y muestra el SearchBar al hacer clic en el enlace
+    setShowSearchBar(true);
+  };
+
   return (
     <div className="ppage">
-      <div className="fondoazul">
-        <h1>{business.name}</h1>
-         aca tiene que ir el logo blancoS
-        </div>
-       <div>
-       <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
-        <p className='estrellitas'>Calificación: {rating} estrellas</p>
-        {[1, 2, 3, 4, 5].map((star) => (
-          <span
-          className='strellacolor'
-            key={star}
-            onMouseEnter={() => setHoveredRating(star)}
-            onMouseLeave={() => setHoveredRating(0)}
-            onClick={() => handleRatingChange(star)}
-            style={{
-              cursor: 'pointer',
-              color: hoveredRating >= star || rating >= star ? 'orange' : 'gray',
-            }}
-          >
-            ☆
-          </span>
-        ))}
-      </div>
-      <div className="dejacomentario">
-        <div className='spaceinbetween'>
-        <input
-        className='inputNoMbre'
-          type="text"
-          placeholder=" Nombre:"
-          value={newReview.reviewer}
-          onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
-        />
-        </div>
-        <div className='spaceinbetween'>
-        <textarea
-        className='textareat'
-          placeholder=" Escribe un comentario..."
-          value={newReview.comment}
-          onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-        />
-        </div>
-        <div className='recubrebuton'>
-        <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
-      </div>
-      </div>
-      <div>
-        {reviews.map((review) => (
-          <div key={review._id}>
-            <p>{review.reviewer} dijo: {review.comment}</p>
-            <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
+      {showSearchBar ? (
+        <SearchBar />
+      ) : (
+        <div>
+          <div className="fondoazul">
+            <h1>{business.name}</h1>
+            {/* Aquí va el logo blancoS */}
+          </div>
+          <div>
+            <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
+            <p className='estrellitas'>Calificación: {rating} estrellas</p>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                className='strellacolor'
+                key={star}
+                onMouseEnter={() => setHoveredRating(star)}
+                onMouseLeave={() => setHoveredRating(0)}
+                onClick={() => handleRatingChange(star)}
+                style={{
+                  cursor: 'pointer',
+                  color: hoveredRating >= star || rating >= star ? 'orange' : 'gray',
+                }}
+              >
+                ☆
+              </span>
+            ))}
+          </div>
+          <div className="dejacomentario">
+            <div className='spaceinbetween'>
+              <input
+                className='inputNoMbre'
+                type="text"
+                placeholder=" Nombre:"
+                value={newReview.reviewer}
+                onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
+              />
+            </div>
+            <div className='spaceinbetween'>
+              <textarea
+                className='textareat'
+                placeholder=" Escribe un comentario..."
+                value={newReview.comment}
+                onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+              />
+            </div>
+            <div className='recubrebuton'>
+              <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
+            </div>
+          </div>
+          <div>
+            {reviews.map((review) => (
+              <div key={review._id}>
+                <p>{review.reviewer} dijo: {review.comment}</p>
+                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
             <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
             <textarea
               placeholder="Responder..."
               value={review.reply || ''}
               onChange={(e) => handleReplySubmit(review._id, e.target.value)}
             />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <Link  href="/home">
-          Volver al buscador
-        </Link>
+        </div>
+      )}
+      <Link href="#" onClick={handleReturnToSearch}>
+        Volver al buscador
+      </Link>
     </div>
   );
 };
