@@ -47,6 +47,7 @@ const ProfileMenu = () => {
   // Verifica la ruta actual
   const isHome = router.pathname === '/home';
   const isUsuarioNegociador = router.pathname === '/usuarioNegociador';
+  const isReview = router.pathname === '/Review';
 
   return (
     <div className="profile-menu">
