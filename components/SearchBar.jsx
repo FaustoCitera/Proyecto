@@ -6,22 +6,32 @@ const SearchBar = () => {
   const [value, setValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const router = useRouter();
+  // const [business, setBusiness] = useState({});
 
-  const businesses = [
-    { id: 1, name: 'McDonalds' },
-    { id: 2, name: 'Galidon' },
-    { id: 3, name: 'Betos Lomitos' },
-    // Agrega más negocios aquí
-  ];
+  const businesses = 
+    fetch('http://localhost:3001/busqueda', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(async (response) => {
+      if (response.ok) {
+        console.log('Todo bien');
+        //
+        const data = await response.json();
+        return data;
 
-  /*const [businesses, setBusinesses] = useState([]);
+        // setBusiness(data);
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        return [];
+      }
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
 
-  useEffect(() => {
-    fetch('http://localhost:3001/negocios.') 
-      .then(response => response.json())
-      .then(data => setBusinesses(data))
-      .catch(error => console.error('Error fetching businesses:', error));
-  }, []);*/
 
   const getSuggestions = (inputValue) => {
     const filteredBusinesses = businesses.filter((business) =>
@@ -47,7 +57,7 @@ const SearchBar = () => {
   );
 
   const inputProps = {
-    placeholder: 'Encontra tu negocio',
+    placeholder: '‎ Encontra tu negocio',
     value,
     onChange: (_, { newValue }) => {
       setValue(newValue);

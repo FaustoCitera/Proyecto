@@ -29,9 +29,21 @@ const LoginPage = () => {
       username,
       password,
       }),
-    });
-    router.push('/home');
-  } 
+    })
+    .then((response) => {
+      if (response.ok) {
+        console.log('Todo bien');
+        alert("Usuario" + username + "creado correctamente")
+        router.push('/home'); 
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        alert("error")
+      }
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
+  };
   return (
   <div className="pe">
     <div className="page">

@@ -35,19 +35,25 @@ const SignUpPage = () => {
       password
     });
 
-    console.log(body);
-
     fetch('http://localhost:3001/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: body,
-    }).then((r) => r.text())
-      .then((d) => console.log(d))
-      .catch((e) => console.log(e));
-    //router.push('home');
-
+    }).then((response) => {
+      if (response.ok) {
+        console.log('Todo bien');
+        alert("Bienvenido" + username)
+        router.push('/home'); 
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        alert("error")
+      }
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
   };
     return (
       <div className="page">
