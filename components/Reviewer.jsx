@@ -49,11 +49,12 @@ const App = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="ppage">
+      <div className="fondoazul">
         <h1>{business.name}</h1>
+        </div>
         <img src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
-      </div>
+
       <div>
         <p>Calificación: {rating} estrellas</p>
         {[1, 2, 3, 4, 5].map((star) => (

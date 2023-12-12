@@ -506,17 +506,22 @@ justify-content: space-between;
       color: #FFFFFF;
       border-radius: 5px;
       font-size: 16px;
+      display: flex;
       background-color: #667EEA;
-      padding: 1%;
-      text-align: center;
-      padding-top: 5px;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding: 0.5%;
+      align-items: center;
+    justify-content: center;
+    width: 5%;
+    text-align: center;
 }
 .paddingbuttonconfig
 {
       display: flex;
-      padding-left: 25%;
-      padding-top: 8%;
+      padding-left: 5%;
+      padding-top: 120px;
       padding-right: 10px;
+}
+.espacioez
+{
+      padding: 0.5%;
 }
