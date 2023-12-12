@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../public/globals.css";
+import Reviewer from "./Reviewer";
 
 const BussinesAccount = () => {
   const [business, setBusiness] = useState({
@@ -43,6 +44,7 @@ const BussinesAccount = () => {
           router.push('/home'); 
         } else {
           console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+          alert("error")
         }
       })
       .catch((error) => {

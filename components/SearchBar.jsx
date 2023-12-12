@@ -6,8 +6,9 @@ const SearchBar = () => {
   const [value, setValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const router = useRouter();
+  // const [business, setBusiness] = useState({});
 
-  const businesses = [
+  const businesses = 
     fetch('http://localhost:3001/busqueda', {
       method: 'GET',
       headers: {
@@ -19,15 +20,18 @@ const SearchBar = () => {
         console.log('Todo bien');
         //
         const data = await response.json();
-        console.log(data)
+        return data;
+
+        // setBusiness(data);
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        return [];
       }
     })
     .catch((error) => {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
     })
-  ];
+
 
   const getSuggestions = (inputValue) => {
     const filteredBusinesses = businesses.filter((business) =>
