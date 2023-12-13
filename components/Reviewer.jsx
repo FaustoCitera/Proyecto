@@ -7,29 +7,25 @@ const App = ({handleReturnToSearch, businesses}) => {
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ reviewer: '', comment: '' });
   const [hoveredRating, setHoveredRating] = useState(0);
-  const [showSearchBar, setShowSearchBar] = useState(false); // Nuevo estado para controlar la visibilidad de SearchBar
 
   const businessId = businesses;
+
   const handleSubmit = async (e) => {
   e.preventDefault();
     console.log(e.target)
-    const username = e.target.querySelector("#").value;
-    const password = e.target.querySelector("#").value;
     fetch('http://localhost:3001/negocio', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify ( {
-      username,
-      password,
+      businessId,
       }),
     })
     .then((response) => {
       if (response.ok) {
         console.log('Todo bien');
-        alert("Usuario " + username + " actualizado correctamente")
-        router.push('/home'); 
+        alert("Negocio " + businessId + " recibido")
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');
       }
@@ -38,6 +34,9 @@ const App = ({handleReturnToSearch, businesses}) => {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
     })
   }
+  
+  handleSubmit()
+  
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
@@ -87,21 +86,6 @@ const App = ({handleReturnToSearch, businesses}) => {
           ))}
         </div>
         <div className='eldivloco'>
-          <div className='Generalcomentarios'>
-            {reviews.map((review) => (
-              <div key={review._id}>
-                <p>{review.reviewer}: {review.comment}</p>
-                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
-                <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
-                <textarea
-                  placeholder="Responder..."
-                  value={review.reply || ''}
-                  onChange={(e) => handleReplySubmit(review._id, e.target.value)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
         <div className="dejacomentario">
           <div className='spaceinbetween'>
             <input
@@ -124,6 +108,21 @@ const App = ({handleReturnToSearch, businesses}) => {
             <div className='recubrebuton'>
               <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
             </div>
+          </div>
+        </div>
+          <div className='Generalcomentarios'>
+            {reviews.map((review) => (
+              <div key={review._id}>
+                <div><p className="">{review.reviewer}</p>: <p className="">{review.comment}</p></div>
+                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
+                <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
+                <textarea
+                  placeholder="Responder..."
+                  value={review.reply || ''}
+                  onChange={(e) => handleReplySubmit(review._id, e.target.value)}
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div class="paddingbuttonconfig2">
