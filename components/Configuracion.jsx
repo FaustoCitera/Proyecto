@@ -32,7 +32,7 @@ export default function Configuracion() {
     .then((response) => {
       if (response.ok) {
         console.log('Todo bien');
-        alert("Usuario" + username + "actualizado correctamente")
+        alert("Usuario " + username + " actualizado correctamente")
         router.push('/home'); 
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');

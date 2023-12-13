@@ -33,7 +33,7 @@ const LoginPage = () => {
     .then((response) => {
       if (response.ok) {
         console.log('Todo bien');
-        alert("Usuario" + username + "creado correctamente")
+        alert("Bienvenido " + username)
         router.push('/home'); 
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');

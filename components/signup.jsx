@@ -44,7 +44,7 @@ const SignUpPage = () => {
     }).then((response) => {
       if (response.ok) {
         console.log('Todo bien');
-        alert("Bienvenido" + username)
+        alert("Usuario " + username + " creado correctamente")
         router.push('/home'); 
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');

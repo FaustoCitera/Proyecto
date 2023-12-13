@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const App = ({handleReturnToSearch}) => {
+const App = ({handleReturnToSearch, businesses}) => {
   const [business, setBusiness] = useState({});
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
@@ -9,12 +9,12 @@ const App = ({handleReturnToSearch}) => {
   const [hoveredRating, setHoveredRating] = useState(0);
   const [showSearchBar, setShowSearchBar] = useState(false); // Nuevo estado para controlar la visibilidad de SearchBar
 
-  const businessId = 'your-business-id';
+  const businessId = businesses;
 
   useEffect(() => {
     const fetchBusinessData = async () => {
       try {
-        const response = await fetch(`/api/business/${businessId}`);
+        const response = await fetch('http://localhost:3001/review');
         const data = await response.json();
         setBusiness(data);
         setRating(data.rating);
