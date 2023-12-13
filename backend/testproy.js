@@ -206,6 +206,21 @@ app.post('/review', (req, res) => {
   })
 })
 
+app.post('/reviewer', (req, res) => {
+  console.log(req.body)
+  const {businessId} = req.body
+  const buscarDatos = "SELECT * FROM negocios WHERE nombreNegocio = '" + businessId + "'"
+  connection.query(buscarDatos, function(error, results, fields){
+    if (error) throw error
+
+    else
+    {
+      console.log(results)
+      res.send(results)
+    }
+  })
+})
+
 
 
 
