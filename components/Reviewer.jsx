@@ -11,22 +11,32 @@ const App = ({handleReturnToSearch, businesses}) => {
 
   const businessId = businesses;
 
-  useEffect(() => {
-    const fetchBusinessData = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/review');
-        const data = await response.json();
-        setBusiness(data);
-        setRating(data.rating);
-        setReviews(data.reviews);
-        setShowSearchBar(true); // Muestra SearchBar al cargar los datos del negocio
-      } catch (error) {
-        console.error('Error fetching business data', error);
+  e.preventDefault();
+    console.log(e.target)
+    const username = e.target.querySelector("#").value;
+    const password = e.target.querySelector("#").value;
+    fetch('http://localhost:3001/negocio', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify ( {
+      username,
+      password,
+      }),
+    })
+    .then((response) => {
+      if (response.ok) {
+        console.log('Todo bien');
+        alert("Usuario " + username + " actualizado correctamente")
+        router.push('/home'); 
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
       }
-    };
-
-    fetchBusinessData();
-  }, [businessId]);
+    })
+    .catch((error) => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    })
 
   const handleRatingChange = (newRating) => {
     setRating(newRating);
@@ -34,7 +44,7 @@ const App = ({handleReturnToSearch, businesses}) => {
 
   const handleReviewSubmit = async () => {
     try {
-      const response = fetch(`/api/business/${businessId}/reviews`, {
+      const response = fetch('http://localhost:3001/Review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

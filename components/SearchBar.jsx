@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Autosuggest from 'react-autosuggest';
 import { useRouter } from 'next/router';
-import Reviewer from './Reviewer'; 
+import Reviewer from './Reviewer';
 
 const SearchBar = () => {
   const [value, setValue] = useState('');
@@ -29,72 +29,101 @@ const SearchBar = () => {
       } catch (error) {
         console.log('Hubo un problema con la petición Fetch:' + error.message);
       }
-    };
+      fetchBusinesses();
+    }
+  }, []);
 
-    fetchBusinesses();
-  }, []); 
-  console.log(businesses);
-  const getSuggestions = (inputValue) => {
-    const filteredBusinesses = businesses.filter((businesses) =>
-      businesses.nombreNegocio.toLowerCase().includes(inputValue.toLowerCase())
-    );
-    setSuggestions(filteredBusinesses);
+
+  const handleNegocio = async (e) => {
+    e.preventDefault();
+    const negocio = e.target.querySelector("#nombreNegocio").value;
+    const response = fetch('http://localhost:3001/negocio', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        negocio,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Todo bien');
+        } else {
+          console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+        }
+      })
+      .catch((error) => {
+        console.log('Hubo un problema con la petición Fetch:' + error.message);
+      })
   };
 
-  const onSuggestionsFetchRequested = ({ value }) => {
-    getSuggestions(value);
-  };
 
-  const onSuggestionsClearRequested = () => {
-    setSuggestions([]);
-  };
-
-  const onSuggestionSelected = (event, { suggestion }) => {
-    console.log('Seleccionado:', suggestion);
-    setShowReviewer(true);
-  };
-
-  const renderSuggestion = (suggestion) => (
-    <div>{suggestion.nombreNegocio}</div>
+console.log(businesses);
+const getSuggestions = (inputValue) => {
+  const filteredBusinesses = businesses.filter((businesses) =>
+    businesses.nombreNegocio.toLowerCase().includes(inputValue.toLowerCase())
   );
+  setSuggestions(filteredBusinesses);
+};
 
-  const handleSearchButtonClick = () => {
-    setShowReviewer(true);
-  };
+const onSuggestionsFetchRequested = ({ value }) => {
+  getSuggestions(value);
+};
 
-  return (
+const onSuggestionsClearRequested = () => {
+  setSuggestions([]);
+};
+
+const onSuggestionSelected = (event, { suggestion }) => {
+  console.log('Seleccionado:', suggestion);
+  setShowReviewer(true);
+};
+
+const renderSuggestion = (suggestion) => (
+  <div>{suggestion.nombreNegocio}</div>
+);
+
+const handleSearchButtonClick = () => {
+  setShowReviewer(true);
+};
+
+return (
+  <form onSubmit={handleNegocio}>
     <div className="randm">
       {showReviewer ? (
         <Reviewer handleReturnToSearch={() => setShowReviewer(false)} />
       ) : (
         <div className='general'>
           <div className='imgticafuera'>
-          <img className='imgticadentro' src="/assets/img/criTIC.png" width="40%" />
+            <img className='imgticadentro' src="/assets/img/criTIC.png" width="40%" />
           </div>
           <div className='serchybuton'>
-          <div className='searchdiv'>
-            <Autosuggest
-              suggestions={suggestions}
-              onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-              onSuggestionsClearRequested={onSuggestionsClearRequested}
-              onSuggestionSelected={onSuggestionSelected}
-              getSuggestionValue={(suggestion) => suggestion.nombreNegocio}
-              renderSuggestion={renderSuggestion}
-              inputProps={{
-                placeholder: 'Encontra tu negocio',
-                value,
-                onChange: (_, { newValue }) => setValue(newValue),
-              }}
-            />
+            <div className='searchdiv'>
+              <Autosuggest
+                suggestions={suggestions}
+                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={onSuggestionsClearRequested}
+                onSuggestionSelected={onSuggestionSelected}
+                getSuggestionValue={(suggestion) => suggestion.nombreNegocio}
+                renderSuggestion={renderSuggestion}
+                inputProps={{
+                  placeholder: 'Encontra tu negocio',
+                  value,
+                  name: 'nombreNegocio',
+                  onChange: (_, { newValue }) => setValue(newValue),
+                }}
+              />
+            </div>
+            <div className="buttonserch">
+              <button onClick={handleSearchButtonClick}>Buscar</button>
+            </div>
           </div>
-          <div className="buttonserch">
-            <button onClick={handleSearchButtonClick}>Buscar</button>
-          </div>
-        </div>
         </div>
       )}
     </div>
-  );
+  </form>
+);
 };
 
 export default SearchBar;
