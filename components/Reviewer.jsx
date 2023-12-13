@@ -64,11 +64,11 @@ const App = ({handleReturnToSearch, businesses}) => {
     <div className="randomxd">
       <div>
         <div className="">
-          <h1 className="Nombredelnegocioo">  {businesses.nombreNegocio}</h1>
+          <h1 className="Nombredelnegocioo">  {negocio.nombreNegocio}</h1>
           {/* Aquí va el logo blancoS */}
         </div>
         <div className='elwith'>
-          <img className="imglocal" src={businesses.imagen} alt="Business" style={{ width: '400px', height: '200px' }} />
+          <img className="imglocal" src={negocio.imagen} alt="Business" style={{ width: '400px', height: '200px' }} />
           <p className='estrellitas'>Calificación: {rating} estrellas</p>
           {[1, 2, 3, 4, 5].map((star) => (
             <span
