@@ -112,24 +112,30 @@ const App = ({handleReturnToSearch, businesses}) => {
             </div>
           </div>
           <div className='Generalcomentarios'>
-           <div className="UsuarioyComentario"><p className="unsuarioycomentario2">pepe</p>: <p className="unsuarioycomentario2">‎ Excelentes baños, esta vez no estaban desordenados. Me gusto mucho como me atendio el moso luis.</p></div>
+           {/* <label className="Nombredelnegocioo"> Comentarios: </label>
+            <div className='cardtodolike'>
+           <div className="UsuarioyComentario"><p className="UsuarioyComentario2">PepeLover26</p>: <p className="unsuarioycomentario2">‎ Excelentes baños, esta vez no estaban desordenados. Me gusto mucho como me atendio el moso luis.</p></div>
             <div>
               <div className="losdosbtn">
             <button className="btnuno">Like</button>
             <button className="btndons">Dislike</button>
             </div>
             </div>
-          </div>
+            </div>
+          </div> */}
           {reviews.map((review) => (
             <div key={review._id}>
-              <div className="UsuarioyComentario"><p className="unsuarioycomentario2">{review.reviewer}</p>: <p className="unsuarioycomentario2">{review.comment}</p></div>
+              <label className="Nombredelnegocioo"> Comentarios: </label>
+              <div className='cardtodolike'>
+              <div className="UsuarioyComentario"><p className="UsuarioyComentario2">{review.reviewer}</p>: <p className="unsuarioycomentario2">{review.comment}</p></div>
               <div className="losdosbtn">
               <button className="btnuno" onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
               <button className="btndons" onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
               </div>
+              </div>
             </div>
           ))}
-        {/*</div> */}
+        </div>
         </div>
       </div>
       <div class="paddingbuttonconfig2">
