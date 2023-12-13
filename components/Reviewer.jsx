@@ -67,7 +67,7 @@ const App = () => {
             {/* Aquí va el logo blancoS */}
           </div>
           <div className='elwith'>
-            <img className="imglocal" src={business.image} alt="Business" style={{ width: '200px', height: '200px' }} />
+            <img className="imglocal" src={business.image} alt="Business" style={{ width: '400px', height: '200px' }} />
             <p className='estrellitas'>Calificación: {rating} estrellas</p>
             {[1, 2, 3, 4, 5].map((star) => (
               <span
@@ -84,6 +84,22 @@ const App = () => {
                 ☆
               </span>
             ))}
+          </div>
+          <div className='eldivloco'>
+          <div className='Generalcomentarios'>
+            {reviews.map((review) => (
+              <div key={review._id}>
+                <p>{review.reviewer}: {review.comment}</p>
+                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
+            <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
+            <textarea
+              placeholder="Responder..."
+              value={review.reply || ''}
+              onChange={(e) => handleReplySubmit(review._id, e.target.value)}
+            />
+              </div>
+            ))}
+            </div>
           </div>
           <div className="dejacomentario">
             <div className='spaceinbetween'>
@@ -108,20 +124,6 @@ const App = () => {
               <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
             </div>
           </div>
-          </div>
-          <div>
-            {reviews.map((review) => (
-              <div key={review._id}>
-                <p>{review.reviewer}: {review.comment}</p>
-                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
-            <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
-            <textarea
-              placeholder="Responder..."
-              value={review.reply || ''}
-              onChange={(e) => handleReplySubmit(review._id, e.target.value)}
-            />
-              </div>
-            ))}
           </div>
         </div>
       )}
