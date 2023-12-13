@@ -593,12 +593,12 @@ justify-content: space-between;
 }
 .estrellitas
 {
- padding-left: 30px;
+
  padding-top:10px ;
 }
 .strellacolor
 {
-      padding: 2%;
+      padding: 1%;
 
 }
 .imgticafuera
@@ -652,4 +652,8 @@ justify-content: space-between;
       position: absolute;
       margin-left: -195px;
       margin-top: 3px;
+}
+.UsuarioyComentario
+{
+
 }

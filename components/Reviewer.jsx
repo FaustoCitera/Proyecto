@@ -78,10 +78,10 @@ const App = ({handleReturnToSearch, businesses}) => {
               onClick={() => handleRatingChange(star)}
               style={{
                 cursor: 'pointer',
-                color: hoveredRating >= star || rating >= star ? 'orange' : 'gray',
+                color: hoveredRating >= star || rating >= star ? 'blue' : 'gray',
               }}
             >
-              ☆
+              ★
             </span>
           ))}
         </div>
@@ -113,7 +113,7 @@ const App = ({handleReturnToSearch, businesses}) => {
           <div className='Generalcomentarios'>
             {reviews.map((review) => (
               <div key={review._id}>
-                <div><p className="">{review.reviewer}</p>: <p className="">{review.comment}</p></div>
+                <div className="UsuarioyComentario"><p className="">{review.reviewer}</p>: <p className="">{review.comment}</p></div>
                 <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
                 <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
                 <textarea
