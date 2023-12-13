@@ -587,14 +587,25 @@ justify-content: space-between;
 display: flex;
 flex-direction: column;
       width: 400px;
+      align-items: center;
 }
 .recubrebuton
 {
       float: inline-end;
+      color: #FFFFFF;
+      border-radius: 5px;
+      font-size: 16px;
+      display: flex;
+      background-color: #667EEA;
+      padding: 1%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 150px;
 }
 .estrellitas
 {
-
+ padding-left: 15px;
  padding-top:10px ;
 }
 .strellacolor
@@ -627,17 +638,20 @@ flex-direction: column;
 {
       height: 200px;
       padding-left: 50px;
+      padding-right: 50px;
 }
 .flexxd
 {
       display: flex;
+      padding-left: 250px;
+
 }
 
 .paddingbuttonconfig2
 {
       display: flex;
       padding-left: 5%;
-      padding-right: 10px;
+      padding-top: 150px;
 }
 .eldivloco
 {
@@ -654,15 +668,7 @@ flex-direction: column;
       margin-left: -195px;
       margin-top: 3px;
 }
-.UsuarioyComentario2
-{
-      width: 210px;
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-    background-color: #ddd;}
+
     
     .UsuarioyComentario
     {
@@ -675,12 +681,43 @@ flex-direction: column;
       font-weight: bold;
       padding-bottom: 2px;
       font-size: 35px;
-      padding-left: 50px;
     }
     .losdosbtn
     {
-          flex-direction: row-reverse;
+
           align-items: flex-end;
           display: flex;
           gap: 10px;
+          padding-left: 287px;
+          padding-top: 5px;
     }
+    .UsuarioyComentario2
+{
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      border-radius: 25px;
+}
+
+.cardtodolike
+{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 25px;
+      background-color: #667EEA;
+      padding: 3%;
+      border: 5px solid #ccc;
+  
+}
+
+.btnuno
+{
+      color: beige;
+    font-weight: bold;
+}
+
+.btndons
+{
+      color: #ccc;
+      font-weight: bold;
+}
