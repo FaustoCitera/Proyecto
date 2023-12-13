@@ -2,27 +2,35 @@ const express = require('express')
 const cors = require("cors")
 const mysql = require('mysql2')
 require('dotenv').config();
+const app = express()
+app.use(express.json());
+app.use(cors());
+
+
+app.use(express.urlencoded({
+  extended: true,
+}));
+
 const multer  = require('multer')
 
 
-const storage = multer.diskStorage({
+/*const storage = multer.diskStorage({
   destination: function(req, file, cb){
     cb(null, './uploads')
   },
   filename: function (req, file, cb){
-    cb(file.fieldname)
+    cb(null, file.fieldname)
   }
-})
-const upload = multer({ storage: storage })
+})*/
 
-const app = express()
+const upload = multer({ dest: 'uploads/' })
+
 
 const port = 3001
 
 const connection = mysql.createConnection(process.env.DATABASE_URL);
 connection.connect()
-app.use(express.json());
-app.use(cors());
+
 var sesionActual
 
 app.post('/signup', (req, res) => {
