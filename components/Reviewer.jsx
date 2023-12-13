@@ -10,7 +10,7 @@ const App = ({handleReturnToSearch, businesses}) => {
   const [showSearchBar, setShowSearchBar] = useState(false); // Nuevo estado para controlar la visibilidad de SearchBar
 
   const businessId = businesses;
-
+  const handleSubmit = async (e) => {
   e.preventDefault();
     console.log(e.target)
     const username = e.target.querySelector("#").value;
@@ -37,7 +37,7 @@ const App = ({handleReturnToSearch, businesses}) => {
     .catch((error) => {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
     })
-
+  }
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
