@@ -361,10 +361,10 @@ justify-content: space-between;
 {
       display: flex;
       flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5%;
-    width: -webkit-fill-available;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1%;
+      width: -webkit-fill-available;
 }
 .imginicio
 {
@@ -526,9 +526,9 @@ justify-content: space-between;
 .imglocal
 {
       width: 200px;
-    float: inline-end;
-    height: 200px;
-    padding-top: 10px;
+      float: inline-end;
+      height: 200px;
+      padding-top: 20px;
 }
 
 .dejacomentario
@@ -584,9 +584,8 @@ justify-content: space-between;
 }
 .Generalcomentarios
 {
-
-      background-color: #667EEA;
-      padding: 120px;
+display: flex;
+flex-direction: column;
       width: 400px;
 }
 .recubrebuton
@@ -655,7 +654,33 @@ justify-content: space-between;
       margin-left: -195px;
       margin-top: 3px;
 }
-.UsuarioyComentario
+.UsuarioyComentario2
 {
+      width: 210px;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #ddd;}
+    
+    .UsuarioyComentario
+    {
+          display: flex;
+    }
 
-}
+    .Nombredelnegocioo
+    {
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      padding-bottom: 2px;
+      font-size: 35px;
+      padding-left: 50px;
+    }
+    .losdosbtn
+    {
+          flex-direction: row-reverse;
+          align-items: flex-end;
+          display: flex;
+          gap: 10px;
+    }

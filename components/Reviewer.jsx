@@ -11,7 +11,7 @@ const App = ({handleReturnToSearch, businesses}) => {
   const negocio = businesses;
 
   const handleSubmit = async () => {
-  //  e.preventDefault();
+    //  e.preventDefault();
     fetch('http://localhost:3001/negocio', {
       method: 'POST',
       headers: {
@@ -64,7 +64,7 @@ const App = ({handleReturnToSearch, businesses}) => {
     <div className="randomxd">
       <div>
         <div className="">
-          <h1>{businesses.nombreNegocio}</h1>
+          <h1> className="Nombredelnegocioo" {businesses.nombreNegocio}</h1>
           {/* Aquí va el logo blancoS */}
         </div>
         <div className='elwith'>
@@ -87,52 +87,67 @@ const App = ({handleReturnToSearch, businesses}) => {
           ))}
         </div>
         <div className='eldivloco'>
-        <div className="dejacomentario">
-          <div className='spaceinbetween'>
-            <input
-              className='inputNoMbre'
-              type="text"
-              placeholder=" Nombre:"
-              value={newReview.reviewer}
-              onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
-            />
-          </div>
-          <div className='spaceinbetween'>
-            <textarea
-              className='textareat'
-              placeholder=" Escribe un comentario..."
-              value={newReview.comment}
-              onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-            />
-          </div>
-          <div className='flexxd'>
-            <div className='recubrebuton'>
-              <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
+          <div className="dejacomentario">
+            <div className='spaceinbetween'>
+              <input
+                className='inputNoMbre'
+                type="text"
+                placeholder=" Nombre:"
+                value={newReview.reviewer}
+                onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
+              />
+            </div>
+            <div className='spaceinbetween'>
+              <textarea
+                className='textareat'
+                placeholder=" Escribe un comentario..."
+                value={newReview.comment}
+                onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+              />
+            </div>
+            <div className='flexxd'>
+              <div className='recubrebuton'>
+                <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
+              </div>
             </div>
           </div>
-        </div>
           <div className='Generalcomentarios'>
-            {reviews.map((review) => (
-              <div key={review._id}>
-                <div className="UsuarioyComentario"><p className="">{review.reviewer}</p>: <p className="">{review.comment}</p></div>
-                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
-                <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
-                <textarea
-                  placeholder="Responder..."
-                  value={review.reply || ''}
-                  onChange={(e) => handleReplySubmit(review._id, e.target.value)}
-                />
+           {/* <div className="UsuarioyComentario"><p className="unsuarioycomentario2">pepe</p>: <p className="unsuarioycomentario2">‎ Excelentes baños, esta vez no estaban desordenados. Me gusto mucho como me atendio el moso luis.</p></div>
+            <div>
+              <div className="losdosbtn">
+            <button className="btnuno">Like</button>
+            <button className="btndons">Dislike</button>
+            </div>
+            <textarea
+              placeholder="Responder..."
+              value="que bienn"
+            />
+            </div>
+          </div>*/}
+          {reviews.map((review) => (
+            <div key={review._id}>
+              <div className="UsuarioyComentario"><p className="unsuarioycomentario2">{review.reviewer}</p>: <p className="unsuarioycomentario2">{review.comment}</p></div>
+              <div className="losdosbtn">
+              <button className="btnuno" onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
+              <button className="btndons" onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
               </div>
-            ))}
-          </div>
-        </div>
-        <div class="paddingbuttonconfig2">
-          <Link className='VOLVERCONFIG' href="#" onClick={handleReturnToSearch}>
-            Volver
-          </Link>
+              <textarea
+                placeholder="Responder..."
+                value={review.reply || ''}
+                onChange={(e) => handleReplySubmit(review._id, e.target.value)}
+              />
+            </div>
+          ))}
+         </div>
         </div>
       </div>
+      <div class="paddingbuttonconfig2">
+        <Link className='VOLVERCONFIG' href="#" onClick={handleReturnToSearch}>
+          Volver
+        </Link>
+      </div>
     </div>
+    
   );
 };
 
