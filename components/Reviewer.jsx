@@ -7,29 +7,25 @@ const App = ({handleReturnToSearch, businesses}) => {
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ reviewer: '', comment: '' });
   const [hoveredRating, setHoveredRating] = useState(0);
-  const [showSearchBar, setShowSearchBar] = useState(false); // Nuevo estado para controlar la visibilidad de SearchBar
 
   const businessId = businesses;
+
   const handleSubmit = async (e) => {
   e.preventDefault();
     console.log(e.target)
-    const username = e.target.querySelector("#").value;
-    const password = e.target.querySelector("#").value;
     fetch('http://localhost:3001/negocio', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify ( {
-      username,
-      password,
+      businessId,
       }),
     })
     .then((response) => {
       if (response.ok) {
         console.log('Todo bien');
-        alert("Usuario " + username + " actualizado correctamente")
-        router.push('/home'); 
+        alert("Negocio " + businessId + " recibido")
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');
       }
@@ -38,6 +34,9 @@ const App = ({handleReturnToSearch, businesses}) => {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
     })
   }
+  
+  handleSubmit()
+  
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
