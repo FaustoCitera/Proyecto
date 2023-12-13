@@ -312,6 +312,7 @@ justify-content: space-between;
 .general .searchdiv input
 {
       display: flex;
+      padding-left: 30px;
       justify-content: center;
       width: fit-content;
       border: 3px solid #ccc;
@@ -644,4 +645,11 @@ justify-content: space-between;
       align-items: self-start;
       padding-right: 60px;
 
+}
+
+.imagenpositiion
+{
+      position: absolute;
+      margin-left: -195px;
+      margin-top: 3px;
 }
