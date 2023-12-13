@@ -1,30 +1,34 @@
 const express = require('express')
 const cors = require("cors")
 const mysql = require('mysql2')
-require('dotenv').config();
 const app = express()
 app.use(express.json());
 app.use(cors());
+require('dotenv').config();
+
 
 
 app.use(express.urlencoded({
   extended: true,
 }));
 
-const multer  = require('multer')
+
+//const multer  = require('multer')
 
 
-/*const storage = multer.diskStorage({
+
+/*
+const storage = multer.diskStorage({
   destination: function(req, file, cb){
-    cb(null, './uploads')
+    cb(null, '/uploads')
   },
   filename: function (req, file, cb){
     cb(null, file.fieldname)
   }
-})*/
+})
 
-const upload = multer({ dest: 'uploads/' })
-
+const upload = multer({ dest: '/uploads' })
+*/
 
 const port = 3001
 
@@ -96,11 +100,11 @@ app.post('/login', (req, res) =>{
   })
 })
 
-app.post('/business', upload.single('img'), (req, res) => {
+app.post('/business'/*, upload.single('imagen')*/, (req, res) => {
   //Crear negocio
-  console.log(req.body, req.file)
+  console.log(req.body/*, req.file*/)
   const {name, location, owner, productOrService} = req.body
-  const img = req.file
+  //const imagen = req.file
   const chequearNombre = "SELECT nombreNegocio FROM negocios WHERE nombreNegocio = '" + name + "'"
   connection.query(chequearNombre, function(error, results, fields){
     console.log(results)
@@ -114,7 +118,7 @@ app.post('/business', upload.single('img'), (req, res) => {
 
     else 
     {
-      const crearNegocio = "INSERT INTO negocios (nombreNegocio, rubro, imagen, ubicacion, owner) VALUES ('" + name + "', '" + productOrService + "', '" + img + "', '" + location + "', '" + owner + "')"
+      const crearNegocio = "INSERT INTO negocios (nombreNegocio, rubro, imagen, ubicacion, owner) VALUES ('" + name + "', '" + productOrService + "', '" + imagen + "', '" + location + "', '" + owner + "')"
       connection.query(crearNegocio, function(error, results, fields){
         if (error) throw error
         else 
