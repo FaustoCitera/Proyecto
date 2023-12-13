@@ -10,7 +10,7 @@ const SearchBar = () => {
   const [businesses, setBusinesses] = useState([]);
   const [showReviewer, setShowReviewer] = useState(false); // Nuevo estado para controlar la visibilidad de Reviewer
 
-  useEffect(() => {
+  // useEffect(() => {
     const fetchBusinesses = async () => {
       try {
         const response = await fetch('http://localhost:3001/busqueda', {
@@ -29,9 +29,11 @@ const SearchBar = () => {
       } catch (error) {
         console.log('Hubo un problema con la petición Fetch:' + error.message);
       }
-      fetchBusinesses();
     }
-  }, []);
+    // }, []);
+    
+    fetchBusinesses();
+    // fetch
 
 
   const handleNegocio = async (e) => {

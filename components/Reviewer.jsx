@@ -10,9 +10,8 @@ const App = ({handleReturnToSearch, businesses}) => {
 
   const businessId = businesses;
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-    console.log(e.target)
+  const handleSubmit = async () => {
+  //  e.preventDefault();
     fetch('http://localhost:3001/negocio', {
       method: 'POST',
       headers: {
