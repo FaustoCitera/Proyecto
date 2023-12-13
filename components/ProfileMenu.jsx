@@ -21,7 +21,7 @@ const ProfileMenu = () => {
       if (response.ok) {
         console.log('Todo bien');
         alert("Sign out correcto")
-        router.push('/home'); 
+        router.push('/authForm'); 
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');
         alert("error")

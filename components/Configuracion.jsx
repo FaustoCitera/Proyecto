@@ -16,6 +16,7 @@ export default function Configuracion() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(e.target)
     const username = e.target.querySelector("#username").value;
     const password = e.target.querySelector("#password").value;
     fetch('http://localhost:3001/config', {
@@ -43,6 +44,7 @@ export default function Configuracion() {
   }; 
 
   return (
+    <form onSubmit={handleSubmit}>  
     <div className='ppage'>
         <div className='ConfPosition'>
           <div className='fondoazul'>
@@ -77,7 +79,7 @@ export default function Configuracion() {
       </div>
       <div className='espaciolog'></div>
       <div className='fondobutonconfig'>
-      <button className='butonconfig' onClick={handleSubmit}>Guardar</button>
+      <button type="submit "className='butonconfig' >Guardar</button>
       </div>
       </div>
       </div>
@@ -87,6 +89,6 @@ export default function Configuracion() {
         </Link>
         </div>
         </div>
-    
+      </form>
   );
 }

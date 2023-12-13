@@ -33,10 +33,10 @@ const SearchBar = () => {
 
     fetchBusinesses();
   }, []); 
-
+  console.log(businesses);
   const getSuggestions = (inputValue) => {
-    const filteredBusinesses = businesses.filter((business) =>
-      business.name.toLowerCase().includes(inputValue.toLowerCase())
+    const filteredBusinesses = businesses.filter((businesses) =>
+      businesses.nombreNegocio.toLowerCase().includes(inputValue.toLowerCase())
     );
     setSuggestions(filteredBusinesses);
   };
@@ -55,7 +55,7 @@ const SearchBar = () => {
   };
 
   const renderSuggestion = (suggestion) => (
-    <div>{suggestion.name}</div>
+    <div>{suggestion.nombreNegocio}</div>
   );
 
   const handleSearchButtonClick = () => {
@@ -78,7 +78,7 @@ const SearchBar = () => {
               onSuggestionsFetchRequested={onSuggestionsFetchRequested}
               onSuggestionsClearRequested={onSuggestionsClearRequested}
               onSuggestionSelected={onSuggestionSelected}
-              getSuggestionValue={(suggestion) => suggestion.name}
+              getSuggestionValue={(suggestion) => suggestion.nombreNegocio}
               renderSuggestion={renderSuggestion}
               inputProps={{
                 placeholder: 'Encontra tu negocio',

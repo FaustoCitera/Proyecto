@@ -21,7 +21,7 @@ const BussinesAccount = () => {
     e.preventDefault();
     // const name = e.target.querySelector("#nombre").value;
     // const location = e.target.querySelector("#ubicacion").value;
-    // const owner = e.target.querySelector("#dueño").value;
+    // const owner = e.target.querySelector("#owner").value;
     // const productOrService = e.target.querySelector("#producto").value;
     // const img = e.target.querySelector("#imagen").value;
     let formData = new FormData(e.target);
@@ -35,7 +35,7 @@ const BussinesAccount = () => {
       fetch('http://localhost:3001/business', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          //'Content-Type': 'application/x-www-form-urlencoded',
           // "Content-Type": "multipart/form-data",
         },
         body: formData,
@@ -70,7 +70,7 @@ const BussinesAccount = () => {
         <br />
         <label className='labelcolorAcount'>
         <img src="/assets/img/usuario1.png" width="25" height="25" />
-          <input className='inputcolorAcount' id='dueño' placeholder="‎ Nombre Del Dueño" type="text" name="dueño" onChange={handleChange} />
+          <input className='inputcolorAcount' id='owner' placeholder="‎ Nombre Del Dueño" type="text" name="owner" onChange={handleChange} />
         </label>
         <br />
         <label>
