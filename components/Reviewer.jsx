@@ -44,6 +44,9 @@ const App = ({handleReturnToSearch, businesses}) => {
 
   const handleReviewSubmit = async () => {
     try {
+      const estrellas = e.target.querySelector("#estrellas").value;
+      const resena = e.target.querySelector("#resena").value;
+      const nombreNegocio = e.target.querySelector("#nombreNegocio").value;
       const response = fetch('http://localhost:3001/Review', {
         method: 'POST',
         headers: {
@@ -73,6 +76,7 @@ const App = ({handleReturnToSearch, businesses}) => {
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               className='strellacolor'
+              name="estrellas"
               key={star}
               onMouseEnter={() => setHoveredRating(star)}
               onMouseLeave={() => setHoveredRating(0)}
@@ -93,6 +97,7 @@ const App = ({handleReturnToSearch, businesses}) => {
                 className='inputNoMbre'
                 type="text"
                 placeholder=" Nombre:"
+                name="nombreNegocio"
                 value={newReview.reviewer}
                 onChange={(e) => setNewReview({ ...newReview, reviewer: e.target.value })}
               />
@@ -100,6 +105,7 @@ const App = ({handleReturnToSearch, businesses}) => {
             <div className='spaceinbetween'>
               <textarea
                 className='textareat'
+                name="resena"
                 placeholder=" Escribe un comentario..."
                 value={newReview.comment}
                 onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
