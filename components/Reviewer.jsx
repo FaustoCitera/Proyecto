@@ -87,21 +87,6 @@ const App = ({handleReturnToSearch, businesses}) => {
           ))}
         </div>
         <div className='eldivloco'>
-          <div className='Generalcomentarios'>
-            {reviews.map((review) => (
-              <div key={review._id}>
-                <p>{review.reviewer}: {review.comment}</p>
-                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
-                <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
-                <textarea
-                  placeholder="Responder..."
-                  value={review.reply || ''}
-                  onChange={(e) => handleReplySubmit(review._id, e.target.value)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
         <div className="dejacomentario">
           <div className='spaceinbetween'>
             <input
@@ -124,6 +109,21 @@ const App = ({handleReturnToSearch, businesses}) => {
             <div className='recubrebuton'>
               <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
             </div>
+          </div>
+        </div>
+          <div className='Generalcomentarios'>
+            {reviews.map((review) => (
+              <div key={review._id}>
+                <div><p className="">{review.reviewer}</p>: <p className="">{review.comment}</p></div>
+                <button onClick={() => handleLikeDislike(review._id, 'like')}>Like</button>
+                <button onClick={() => handleLikeDislike(review._id, 'dislike')}>Dislike</button>
+                <textarea
+                  placeholder="Responder..."
+                  value={review.reply || ''}
+                  onChange={(e) => handleReplySubmit(review._id, e.target.value)}
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div class="paddingbuttonconfig2">
