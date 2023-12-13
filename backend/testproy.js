@@ -176,7 +176,8 @@ app.get('/busqueda', (req, res) => {
   })
 })
 
-app.get('/negocio', (req, res) => {
+app.post('/negocio', (req, res) => {
+  //Muestra todos los datos de un solo negocio
   console.log(req.body)
   const {negocio} = req.body
   const buscarlo = "SELECT * FROM negocios WHERE nombreNegocio = '" + negocio + "'"
@@ -188,7 +189,7 @@ app.get('/negocio', (req, res) => {
       res.send(results)
     }
   })
-  //Muestra todos los datos de un solo negocio
+  
 })
 
 app.post('/review', (req, res) => {

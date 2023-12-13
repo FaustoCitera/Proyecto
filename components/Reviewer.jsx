@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import Link from 'next/link';
 
 const App = ({handleReturnToSearch, businesses}) => {
-  const [business, setBusiness] = useState({});
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ reviewer: '', comment: '' });
   const [hoveredRating, setHoveredRating] = useState(0);
 
-  const businessId = businesses;
+  console.log(businesses)
+  const negocio = businesses;
 
   const handleSubmit = async () => {
   //  e.preventDefault();
@@ -18,13 +18,13 @@ const App = ({handleReturnToSearch, businesses}) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify ( {
-      businessId,
+      negocio,
       }),
     })
     .then((response) => {
       if (response.ok) {
         console.log('Todo bien');
-        alert("Negocio " + businessId + " recibido")
+        alert("Negocio " + negocio + " recibido")
       } else {
         console.log('Respuesta de red OK pero respuesta de HTTP no OK');
       }
@@ -34,7 +34,9 @@ const App = ({handleReturnToSearch, businesses}) => {
     })
   }
   
-  handleSubmit()
+  useEffect (() => {
+    handleSubmit()
+  }, [])
   
   const handleRatingChange = (newRating) => {
     setRating(newRating);
@@ -62,11 +64,11 @@ const App = ({handleReturnToSearch, businesses}) => {
     <div className="randomxd">
       <div>
         <div className="">
-          <h1>{business.name}</h1>
+          <h1>{businesses.nombreNegocio}</h1>
           {/* Aquí va el logo blancoS */}
         </div>
         <div className='elwith'>
-          <img className="imglocal" src={business.image} alt="Business" style={{ width: '400px', height: '200px' }} />
+          <img className="imglocal" src={businesses.imagen} alt="Business" style={{ width: '400px', height: '200px' }} />
           <p className='estrellitas'>Calificación: {rating} estrellas</p>
           {[1, 2, 3, 4, 5].map((star) => (
             <span

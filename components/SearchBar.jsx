@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Autosuggest from 'react-autosuggest';
 import { useRouter } from 'next/router';
-import Reviewer from './Reviewer';
+import App from './Reviewer';
 
 const SearchBar = () => {
   const [value, setValue] = useState('');
@@ -79,6 +79,9 @@ const onSuggestionsClearRequested = () => {
 
 const onSuggestionSelected = (event, { suggestion }) => {
   console.log('Seleccionado:', suggestion);
+  console.log(suggestion);
+  setBusinesses(suggestion);
+
   setShowReviewer(true);
 };
 
@@ -88,13 +91,14 @@ const renderSuggestion = (suggestion) => (
 
 const handleSearchButtonClick = () => {
   setShowReviewer(true);
+  console.log(businesses)
 };
 
 return (
   <form onSubmit={handleNegocio}>
     <div className="randm">
       {showReviewer ? (
-        <Reviewer handleReturnToSearch={() => setShowReviewer(false)} />
+        <App handleReturnToSearch={() => setShowReviewer(false)} businesses={businesses} />
       ) : (
         <div className='general'>
           <div className='imgticafuera'>
@@ -128,5 +132,6 @@ return (
   </form>
 );
 };
+
 
 export default SearchBar;
