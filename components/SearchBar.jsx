@@ -1,5 +1,3 @@
-// Primer componente (SearchBar)
-
 import React, { useState, useEffect } from 'react';
 import Autosuggest from 'react-autosuggest';
 import { useRouter } from 'next/router';
@@ -66,9 +64,8 @@ const SearchBar = () => {
 
   return (
     <div className="randm">
-      
       {showReviewer ? (
-        <Reviewer />
+        <Reviewer handleReturnToSearch={() => setShowReviewer(false)} />
       ) : (
         <div className='general'>
           <div className='imgticafuera'>
