@@ -142,7 +142,7 @@ app.post('/config', (req, res) => {
     }
     else
     {
-      const cambiarDatos = "UPDATE usuarios SET nombreusuario = " + username + ", contrasena = " + password + " WHERE nombreusuario = '" + sesionActual + "'"
+      const cambiarDatos = "UPDATE usuarios SET nombreusuario = '" + username + "', contrasena = '" + password + "' WHERE nombreusuario = '" + sesionActual + "'"
       connection.query(cambiarDatos, function(error, results, fields){
         if (error) throw error
 
@@ -158,6 +158,7 @@ app.post('/config', (req, res) => {
   
 })
 
+
 app.get('/busqueda', (req, res) => {
   //Busca todos los nombres de negocios
   const buscar = "SELECT nombreNegocio FROM negocios"
@@ -171,9 +172,35 @@ app.get('/busqueda', (req, res) => {
   })
 })
 
-//app.get('/???????????', (req, res) => {
+app.get('/negocio', (req, res) => {
+  console.log(req.body)
+  const {negocio} = req.body
+  const buscarlo = "SELECT * FROM negocios WHERE nombreNegocio = '" + negocio + "'"
+  connection.query(buscarlo, function(error, results, fields){
+    if (error) throw error
+
+    else{
+      console.log(results)
+      res.send(results)
+    }
+  })
   //Muestra todos los datos de un solo negocio
-//})
+})
+
+app.post('/review', (req, res) => {
+  console.log(req.body)
+  const {nombreNegocio, estrellas, resena} = req.body
+  const crearResena = "INSERT INTO resenas (nombreNegocioResenado, usuarioResenador, estrellas, textoResena) VALUES ('" + nombreNegocio + "', '" + sesionActual + "', '" + estrellas + "', '" + resena + "')"
+  connection.query(crearResena, function(error, results, fields){
+    if (error) throw error
+
+    else
+    {
+      console.log("Reseña subida")
+      res.send("Reseña subida")
+    }
+  })
+})
 
 
 
