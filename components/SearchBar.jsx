@@ -100,7 +100,7 @@ return (
           </div>
           <div className='serchybuton'>
             <div className='searchdiv'>
-            <img src="/assets/img/lupa.png" width="30" height="25" />
+            <img  className="imagenpositiion" src="/assets/img/lupa.png" width="30" height="25" />
               <Autosuggest
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={onSuggestionsFetchRequested}
