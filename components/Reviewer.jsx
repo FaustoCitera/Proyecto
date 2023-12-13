@@ -64,7 +64,7 @@ const App = ({handleReturnToSearch, businesses}) => {
     <div className="randomxd">
       <div>
         <div className="">
-          <h1> className="Nombredelnegocioo" {businesses.nombreNegocio}</h1>
+          <h1 className="Nombredelnegocioo">  {businesses.nombreNegocio}</h1>
           {/* Aquí va el logo blancoS */}
         </div>
         <div className='elwith'>
