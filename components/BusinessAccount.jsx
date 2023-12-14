@@ -40,17 +40,16 @@ const BussinesAccount = () => {
   console.log(base64Image);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const name = e.target.querySelector("#nombre").value;
-    // const location = e.target.querySelector("#ubicacion").value;
-    // const owner = e.target.querySelector("#owner").value;
-    // const productOrService = e.target.querySelector("#producto").value;
-    // const img = e.target.querySelector("#imagen").value;
-    let formData = new FormData(e.target);
-    formData.append("imagen", base64Image);
+    const name = e.target.querySelector("#nombre").value;
+    const location = e.target.querySelector("#ubicacion").value;
+    const owner = e.target.querySelector("#owner").value;
+    const productOrService = e.target.querySelector("#producto").value;
+    // let formData = new FormData(e.target);
+    // formData.append("imagen", base64Image);
 
-    for (const value of formData.values()) {
-      console.log(value);
-    }
+    // for (const value of formData.values()) {
+    //   console.log(value);
+    // }
 
     console.log()
       fetch('http://localhost:3001/business', {
@@ -58,8 +57,14 @@ const BussinesAccount = () => {
         headers: {
           //'Content-Type': 'application/x-www-form-urlencoded',
           // "Content-Type": "multipart/form-data",
+          'Content-Type': 'application/json',
         },
-        body: formData,
+        body: 
+        name,
+        location,
+        owner,
+        productOrService,
+        base64Image,
       })  
       .then((response) => {
         if (response.ok) {
