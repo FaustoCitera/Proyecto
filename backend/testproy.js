@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require("cors")
 const mysql = require('mysql2')
 const app = express()
+
 app.use(express.json());
 app.use(cors());
 require('dotenv').config();
@@ -100,7 +101,10 @@ app.post('/login', (req, res) =>{
   })
 })
 
-app.post('/business', (req, res) => {
+const multer = require('multer'); // Middleware for handling multipart/form-data (file uploads)
+const upload = multer();
+
+app.post('/business', upload.single("imagen"), (req, res) => {
   //Crear negocio
   console.log(req.body)
   const {name, location, owner, productOrService, base64Image} = req.body
@@ -179,7 +183,7 @@ app.post('/negocio', (req, res) => {
   //Muestra todos los datos de un solo negocio
   console.log(req.body)
   const {negocio} = req.body
-  const buscarlo = "SELECT nombreNegocio, imagen, ubicacion FROM negocios WHERE nombreNegocio = '" + negocio.nombreNegocio + "'"
+  const buscarlo = "SELECT nombreNegocio, imagen, ubicacion FROM negocios WHERE nombreNegocio = '" + negocio + "'"
   connection.query(buscarlo, function(error, results, fields){
     if (error) throw error
 

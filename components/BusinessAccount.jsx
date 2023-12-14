@@ -41,33 +41,27 @@ const BussinesAccount = () => {
   console.log(base64Image);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target.querySelector("#nombre").value;
-    const location = e.target.querySelector("#ubicacion").value;
-    const owner = e.target.querySelector("#owner").value;
-    const productOrService = e.target.querySelector("#producto").value;
-    // let formData = new FormData(e.target);
-    // formData.append("imagen", base64Image);
+    // const name = e.target.querySelector("#nombre").value;
+    // const location = e.target.querySelector("#ubicacion").value;
+    // const owner = e.target.querySelector("#owner").value;
+    // const productOrService = e.target.querySelector("#producto").value;
+     let formData = new FormData(e.target)
+     formData.append("imagen", base64Image);
 
-    // for (const value of formData.values()) {
-    //   console.log(value);
-    // }
+     for (const value of formData.values()) {
+      console.log(value);
+     }
 
     console.log()
       fetch('http://localhost:3001/business', {
         method: 'POST',
         headers: {
-          //'Content-Type': 'application/x-www-form-urlencoded',
-          // "Content-Type": "multipart/form-data",
-          'Content-Type': 'application/json',
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "multipart/form-data",
+          // 'Content-Type': 'application/json',
         },
-        body: JSON.stringify ({
-        name,
-        location,
-        owner,
-        productOrService,
-        base64Image,
-        }),
-      })  
+        body: formData,
+      })
       .then((response) => {
         if (response.ok) {
           console.log('Todo bien');
@@ -88,7 +82,7 @@ const BussinesAccount = () => {
       <div className='Account'>
         <label className='labelcolorAcount'>
         <img src="/assets/img/manos.png" width="25" height="25" />
-          <input className='inputcolorAcount' id='nombre' placeholder="‎ Nombre del Negocio"type="text" name="name" onChange={handleChange} />
+          <input className='inputcolorAcount' id='nombreNegocio' placeholder="‎ Nombre del Negocio"type="text" name="name" onChange={handleChange} />
         </label>
         <br />
         <label className='labelcolorAcount'>

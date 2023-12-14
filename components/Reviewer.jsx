@@ -27,7 +27,9 @@ const App = ({handleReturnToSearch, selectedBusinesses}) => {
     .then((response) => {
       if (response.ok) {
         const data = response.json();
+        console.log(data);
         setNegocio(data);
+        console.log(negocio);
         console.log('Todo bien');
         alert("Negocio " + negocio + " recibido")
       } else {
@@ -101,8 +103,8 @@ const App = ({handleReturnToSearch, selectedBusinesses}) => {
 
   return (
     <form onSubmit={() => {
-      // handleSubmit(); 
-      // handleReviewSubmit();
+      handleSubmit(); 
+       //handleReviewSubmit();
     }}> 
     <div className="randomxd">
       <div>
@@ -154,7 +156,7 @@ const App = ({handleReturnToSearch, selectedBusinesses}) => {
             </div>
             <div className='flexxd'>
               <div className='recubrebuton'>
-                <button className='buttonreview' onChange={handleReviewSubmit}> Agregar comentario</button>
+                <button className='buttonreview'  onChange={handleReviewSubmit}> Agregar comentario</button>
               </div>
             </div>
           </div>
