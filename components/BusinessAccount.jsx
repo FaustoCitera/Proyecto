@@ -9,7 +9,8 @@ const BussinesAccount = () => {
     owner: '',
     img:'',
   });
-  
+  const [base64Image, setBase64Image] = useState('');
+
   const convertiraBase64=(archivos, e)=> {
     Array.from(archivos).forEach(archivo=>{
       var reader=new FileReader();
@@ -19,6 +20,7 @@ const BussinesAccount = () => {
         var base64 = reader.result;
         arrayAuxiliar=base64.split(',');
         console.log(arrayAuxiliar[1]);
+        setBase64Image(arrayAuxiliar[1]);
       }
     })
     const handleChange = (e) => {
@@ -44,7 +46,7 @@ const BussinesAccount = () => {
     // const productOrService = e.target.querySelector("#producto").value;
     // const img = e.target.querySelector("#imagen").value;
     let formData = new FormData(e.target);
-    formData.append("imagen", arrayAuxiliar[1]);
+    formData.append("imagen", base64Image);
 
     for (const value of formData.values()) {
       console.log(value);
