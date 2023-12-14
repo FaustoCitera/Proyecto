@@ -82,7 +82,6 @@ const onSuggestionSelected = (event, { suggestion }) => {
   console.log('Seleccionado:', suggestion);
   console.log(suggestion);
   setBusinesses(suggestion);
-
   setShowReviewer(true);
 };
 

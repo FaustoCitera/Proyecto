@@ -179,7 +179,7 @@ app.post('/negocio', (req, res) => {
   //Muestra todos los datos de un solo negocio
   console.log(req.body)
   const {negocio} = req.body
-  const buscarlo = "SELECT * FROM negocios WHERE nombreNegocio = '" + negocio + "'"
+  const buscarlo = "SELECT nombreNegocio, imagen, ubicacion FROM negocios WHERE nombreNegocio = '" + negocio.nombreNegocio + "'"
   connection.query(buscarlo, function(error, results, fields){
     if (error) throw error
 

@@ -4,11 +4,12 @@ import Link from 'next/link';
 const App = ({handleReturnToSearch, businesses}) => {
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
-  const [newReview, setNewReview] = useState({ reviewer: '', comment: '' });
+  const [newReview, setNewReview] = useState({comment: '' });
   const [hoveredRating, setHoveredRating] = useState(0);
+  const [negocio, setNegocio] = useState(businesses);
 
   console.log(businesses)
-  const negocio = businesses;
+  //negocio = businesses;
 
   const handleSubmit = async () => {
     //  e.preventDefault();
@@ -23,6 +24,8 @@ const App = ({handleReturnToSearch, businesses}) => {
     })
     .then((response) => {
       if (response.ok) {
+        const data = response.json();
+        setNegocio(data);
         console.log('Todo bien');
         alert("Negocio " + negocio + " recibido")
       } else {
@@ -33,6 +36,8 @@ const App = ({handleReturnToSearch, businesses}) => {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
     })
   }
+
+  console.log(negocio)
   
   useEffect (() => {
     handleSubmit()
@@ -70,22 +75,21 @@ const App = ({handleReturnToSearch, businesses}) => {
       console.log(estrellas)
       const resena = e.target.querySelector("#resena").value;
       console.log(resena)
-      const nombreNegocio = e.target.querySelector("#nombreNegocio").value;
-      console.log(nombreNegocio)
+      // const nombreNegocio = e.target.querySelector("#nombreNegocio").value;
       const response = fetch('http://localhost:3001/Review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          negocio,
           estrellas,
           comment: resena,
-          reviewer: nombreNegocio,
         }),
       });
       const data = await response.json();
       setReviews(data.reviews);
-      setNewReview({ reviewer: '', comment: '' });
+      setNewReview({comment: '' });
       setRating(0); // Restablecer el rating después de enviar la reseña
       alert("reseña enviada")
     } catch (error) {
@@ -94,10 +98,15 @@ const App = ({handleReturnToSearch, businesses}) => {
   };
 
   return (
+    <form onSubmit={() => {
+      handleSubmit(); 
+      handleReviewSubmit();
+    }}> 
     <div className="randomxd">
       <div>
         <div className="">
           <h1 className="Nombredelnegocioo"> {negocio.nombreNegocio}</h1>
+          <h2 className="Nombredelnegocioo"> {negocio.ubicacion}</h2>
           {/* Aquí va el logo blancoS */}
         </div>
         <div className='elwith'>
@@ -143,7 +152,7 @@ const App = ({handleReturnToSearch, businesses}) => {
             </div>
             <div className='flexxd'>
               <div className='recubrebuton'>
-                <button className='buttonreview' onClick={handleReviewSubmit}> Agregar comentario</button>
+                <button className='buttonreview'  > Agregar comentario</button>
               </div>
             </div>
           </div>
@@ -180,7 +189,7 @@ const App = ({handleReturnToSearch, businesses}) => {
         </Link>
       </div>
     </div>
-    
+    </form>
   );
 };
 
