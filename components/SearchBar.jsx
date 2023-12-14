@@ -9,6 +9,8 @@ const SearchBar = () => {
   const router = useRouter();
   const [businesses, setBusinesses] = useState([]);
   const [showReviewer, setShowReviewer] = useState(false); // Nuevo estado para controlar la visibilidad de Reviewer
+  const [selectedBusinesses, setSelectedBusinesses] = useState([]);
+
 
   useEffect(() => {
     const fetchBusinesses = async () => {
@@ -81,7 +83,8 @@ const onSuggestionsClearRequested = () => {
 const onSuggestionSelected = (event, { suggestion }) => {
   console.log('Seleccionado:', suggestion);
   console.log(suggestion);
-  setBusinesses(suggestion);
+  setSelectedBusinesses(suggestion);
+  console.log(selectedBusinesses)
   setShowReviewer(true);
 };
 
@@ -91,14 +94,14 @@ const renderSuggestion = (suggestion) => (
 
 const handleSearchButtonClick = () => {
   setShowReviewer(true);
-  console.log(businesses)
+  console.log(selectedBusinesses)
 };
 
 return (
   <form onSubmit={handleNegocio}>
     <div className="randm">
       {showReviewer ? (
-        <App handleReturnToSearch={() => setShowReviewer(false)} businesses={businesses} />
+        <App handleReturnToSearch={() => setShowReviewer(false)} selectedBusinesses={selectedBusinesses.nombreNegocio} />
       ) : (
         <div className='general'>
           <div className='imgticafuera'>

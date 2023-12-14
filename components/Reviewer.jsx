@@ -1,16 +1,18 @@
 import React, { useState, useEffect} from 'react';
 import Link from 'next/link';
 
-const App = ({handleReturnToSearch, businesses}) => {
+const App = ({handleReturnToSearch, selectedBusinesses}) => {
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({comment: '' });
   const [hoveredRating, setHoveredRating] = useState(0);
-  const [negocio, setNegocio] = useState(businesses);
-
-  console.log(businesses)
+  const [negocio, setNegocio] = useState(selectedBusinesses);
+    // setNegocio(selectedBusinesses)
+    console.log(negocio)
+  
   //negocio = businesses;
-
+    // setNegocio(selectedBusinesses)
+    // console.log(negocio)
   const handleSubmit = async () => {
     //  e.preventDefault();
     fetch('http://localhost:3001/negocio', {
@@ -99,8 +101,8 @@ const App = ({handleReturnToSearch, businesses}) => {
 
   return (
     <form onSubmit={() => {
-      handleSubmit(); 
-      handleReviewSubmit();
+      // handleSubmit(); 
+      // handleReviewSubmit();
     }}> 
     <div className="randomxd">
       <div>
@@ -152,7 +154,7 @@ const App = ({handleReturnToSearch, businesses}) => {
             </div>
             <div className='flexxd'>
               <div className='recubrebuton'>
-                <button className='buttonreview'  > Agregar comentario</button>
+                <button className='buttonreview' onChange={handleReviewSubmit}> Agregar comentario</button>
               </div>
             </div>
           </div>
