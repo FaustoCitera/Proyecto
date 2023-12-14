@@ -100,11 +100,10 @@ app.post('/login', (req, res) =>{
   })
 })
 
-app.post('/business'/*, upload.single('imagen')*/, (req, res) => {
+app.post('/business', (req, res) => {
   //Crear negocio
-  console.log(req.body/*, req.file*/)
-  const {name, location, owner, productOrService, imagen} = req.body
-  //const imagen = req.file
+  console.log(req.body)
+  const {name, location, owner, productOrService, base64Image} = req.body
   const chequearNombre = "SELECT nombreNegocio FROM negocios WHERE nombreNegocio = '" + name + "'"
   connection.query(chequearNombre, function(error, results, fields){
     console.log(results)
@@ -118,7 +117,7 @@ app.post('/business'/*, upload.single('imagen')*/, (req, res) => {
 
     else 
     {
-      const crearNegocio = "INSERT INTO negocios (nombreNegocio, rubro, imagen, ubicacion, owner) VALUES ('" + name + "', '" + productOrService + "', '" + imagen + "', '" + location + "', '" + owner + "')"
+      const crearNegocio = "INSERT INTO negocios (nombreNegocio, rubro, imagen, ubicacion, owner) VALUES ('" + name + "', '" + productOrService + "', '" + base64Image + "', '" + location + "', '" + owner + "')"
       connection.query(crearNegocio, function(error, results, fields){
         if (error) throw error
         else 

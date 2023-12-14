@@ -60,12 +60,13 @@ const BussinesAccount = () => {
           // "Content-Type": "multipart/form-data",
           'Content-Type': 'application/json',
         },
-        body: 
+        body: JSON.stringify ({
         name,
         location,
         owner,
         productOrService,
         base64Image,
+        }),
       })  
       .then((response) => {
         if (response.ok) {
