@@ -38,26 +38,40 @@ const App = ({handleReturnToSearch, businesses}) => {
     handleSubmit()
   }, [])
   
+  const handleReviews =async () => {
+    
+  }
+
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
 
-  const handleReviewSubmit = async () => {
+  
+  const handleReviewSubmit = async (e) => {
     try {
+      e.preventDefault();
       const estrellas = e.target.querySelector("#estrellas").value;
+      console.log(estrellas)
       const resena = e.target.querySelector("#resena").value;
+      console.log(resena)
       const nombreNegocio = e.target.querySelector("#nombreNegocio").value;
+      console.log(nombreNegocio)
       const response = fetch('http://localhost:3001/Review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ reviewer: newReview.reviewer, comment: newReview.comment, rating }),
+        body: JSON.stringify({
+          estrellas,
+          comment: resena,
+          reviewer: nombreNegocio,
+        }),
       });
       const data = await response.json();
       setReviews(data.reviews);
       setNewReview({ reviewer: '', comment: '' });
       setRating(0); // Restablecer el rating después de enviar la reseña
+      alert("reseña enviada")
     } catch (error) {
       console.error('Error submitting review', error);
     }
@@ -72,7 +86,7 @@ const App = ({handleReturnToSearch, businesses}) => {
         </div>
         <div className='elwith'>
           <img className="imglocal" src={negocio.imagen} alt="Business" style={{ width: '400px', height: '200px' }} />
-          <p className='estrellitas'>Calificación: {rating} estrellas</p>
+          <p className='estrellitas'>Calificación: {rating} </p>
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               className='strellacolor'

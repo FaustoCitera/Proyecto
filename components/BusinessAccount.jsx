@@ -9,6 +9,25 @@ const BussinesAccount = () => {
     owner: '',
     img:'',
   });
+  
+  const convertiraBase64=(archivos, e)=> {
+    Array.from(archivos).forEach(archivo=>{
+      var reader=new FileReader();
+      reader.readAsDataURL(archivo);
+      reader.onload=function(){
+        var arrayAuxiliar = [];
+        var base64 = reader.result;
+        arrayAuxiliar=base64.split(',');
+        console.log(arrayAuxiliar[1]);
+      }
+    })
+    const handleChange = (e) => {
+      setBusiness({
+        ...business,
+        [e.target.name]: e.target.value,
+      });
+    };
+  }
 
   const handleChange = (e) => {
     setBusiness({
@@ -25,7 +44,7 @@ const BussinesAccount = () => {
     // const productOrService = e.target.querySelector("#producto").value;
     // const img = e.target.querySelector("#imagen").value;
     let formData = new FormData(e.target);
-    formData.append("imagen", business.img);
+    formData.append("imagen", arrayAuxiliar[1]);
 
     for (const value of formData.values()) {
       console.log(value);
@@ -78,7 +97,7 @@ const BussinesAccount = () => {
         </label>
         <br/>
         <label className='labelcolorAcount'>
-          <input className='inputcolorAcount' id='imagen' type="file" onChange={handleChange} />
+          <input className='inputcolorAcount' id='imagen' type="file" onChange={(e)=>convertiraBase64(e.target.files)} /* onChange={(e)=>convertiraBase64(e.target.files)} *//>
         </label>
         <br />
         <div className='labelcolorbuton'>
