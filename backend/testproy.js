@@ -103,7 +103,7 @@ app.post('/login', (req, res) =>{
 app.post('/business'/*, upload.single('imagen')*/, (req, res) => {
   //Crear negocio
   console.log(req.body/*, req.file*/)
-  const {name, location, owner, productOrService} = req.body
+  const {name, location, owner, productOrService, imagen} = req.body
   //const imagen = req.file
   const chequearNombre = "SELECT nombreNegocio FROM negocios WHERE nombreNegocio = '" + name + "'"
   connection.query(chequearNombre, function(error, results, fields){
@@ -220,6 +220,12 @@ app.post('/reviewer', (req, res) => {
       res.send(results)
     }
   })
+})
+
+app.get('/signout', (req, res) =>{
+  sesionActual = ""
+  console.log("Se cerro la sesion")
+  res.send("Sesion cerrada")
 })
 
 
