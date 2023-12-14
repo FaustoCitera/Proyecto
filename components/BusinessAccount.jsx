@@ -19,7 +19,6 @@ const BussinesAccount = () => {
         var arrayAuxiliar = [];
         var base64 = reader.result;
         arrayAuxiliar=base64.split(',');
-        console.log(arrayAuxiliar[1]);
         setBase64Image(arrayAuxiliar[1]);
       }
     })
@@ -38,6 +37,7 @@ const BussinesAccount = () => {
     });
   };
 
+  console.log(base64Image);
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const name = e.target.querySelector("#nombre").value;

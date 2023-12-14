@@ -1,6 +1,5 @@
 import "../public/globals.css";
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 import SearchBar from '../components/SearchBar';
 import ProfileMenu from '../components/ProfileMenu';

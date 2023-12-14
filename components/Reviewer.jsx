@@ -38,8 +38,24 @@ const App = ({handleReturnToSearch, businesses}) => {
     handleSubmit()
   }, [])
   
-  const handleReviews =async () => {
-    
+  const handleReviews = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/reviews', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setReviews(data);
+      } else {
+        console.log('Respuesta de red OK pero respuesta de HTTP no OK');
+      }
+    } catch (error) {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+    }
   }
 
   const handleRatingChange = (newRating) => {
@@ -81,7 +97,7 @@ const App = ({handleReturnToSearch, businesses}) => {
     <div className="randomxd">
       <div>
         <div className="">
-          <h1 className="Nombredelnegocioo">  {negocio.nombreNegocio}</h1>
+          <h1 className="Nombredelnegocioo"> {negocio.nombreNegocio}</h1>
           {/* Aquí va el logo blancoS */}
         </div>
         <div className='elwith'>
