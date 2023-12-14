@@ -101,10 +101,7 @@ app.post('/login', (req, res) =>{
   })
 })
 
-const multer = require('multer'); // Middleware for handling multipart/form-data (file uploads)
-const upload = multer();
-
-app.post('/business', upload.single("imagen"), (req, res) => {
+app.post('/business', (req, res) => {
   //Crear negocio
   console.log(req.body)
   const {name, location, owner, productOrService, base64Image} = req.body
